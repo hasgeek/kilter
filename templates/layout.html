@@ -1,0 +1,39 @@
+{% from "baseframe/components.html" import networkbar with context -%}
+{% extends "eventframe.html" -%}
+
+{%- block layoutheaders %}
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+{% endblock %}
+
+{% block headerbox %}
+<header class="header">
+  {{ networkbar(siteid='events', login=true) }}
+  <div class="logo">
+  </div>
+</header>
+{% endblock %}
+
+{% block baseheadline -%}
+  {% block headline -%}
+    <div class="page-header">
+      <h2>{{ self.title() }}</h2>
+    </div>
+  {%- endblock %}
+{%- endblock %}
+
+{% block basecontent -%}
+  {% block content %}{% endblock %}
+{%- endblock %}
+
+{% block basefooter -%}
+  <footer>
+    <div class="footer-inner">
+      <div class="container">
+        <div class="footer-bar"></div>
+        {% block footer -%}
+          <span>Kilter is a conference by <a href="http://hasgeek.com/">HasGeek</a>. Copyright &copy; 2017. All rights reserved.</span>
+        {%- endblock %}
+      </div>
+    </div>
+  </footer>
+{%- endblock %}

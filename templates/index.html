@@ -1,0 +1,23 @@
+{% from "baseframe/components.html" import networkbar with context -%}
+{% extends theme("layout.html") %}
+
+{% block titletags -%}
+  <title>{% block title %}{{ website.title }}{% endblock %}</title>
+  <meta name="DC.title" content="{{ website.title }}"/>
+{%- endblock %}
+{% block description %}{{ node.description }}{% endblock %}
+
+{% block headerbox %}
+<header class="header">
+  {{ networkbar(siteid='events', login=true) }}
+  <div class="container banner">
+  </div>
+</header>
+{% endblock %}
+
+{% block main %}
+{% include theme("inc/introduction.html") %}
+{% endblock %}
+
+{% block footerscripts %}
+{% endblock %}
