@@ -1,0 +1,31 @@
+<section id="blog" class="push-three-top push-two-bottom clearfix">
+  <div class="container">
+    <div class="row">
+      <h3 class="huge col-xs-12">Kilter blog</h3>
+      <div id="entries-wrapper">
+        <p class="text-center regular">Loading...</p>
+        {%raw%}
+          <script id="entries" type="text/ractive">
+            {{#content}}
+              <div class="col-xs-6 col-md-4">
+                <a class="card click" data-target="{{ link }}" data-label="{{ title }}" href="{{ link }}" target="_blank">
+                  <div class="talk">
+                    <p class="title large"><span>{{ title }}</span></p>
+                    <hr class="separator">
+                    <div class="description regular">
+                      {{{ description }}}
+                    </div>
+                    <p class="fullname regular"><span>{{author}}</span></p>
+                  </div>
+                </a>
+              </div>
+            {{/}}
+          </script>
+        {%endraw%}
+      </div>
+      <div class="push-two-top col-xs-12">
+        <a href="{{ node.properties.feed_url }}" class="button link-silent btn-shadow pull-right" target="_blank">Read more on Kilter blog</a>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,211 @@
+html, body, #page {
+    height: 100%;
+    margin: 0px;
+}
+
+header {
+  background-color: #b9e4f1;
+  color: #fff;
+  padding: 80px 0;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 40px solid #f58a73;
+}
+
+@media (min-width:768px) {
+  header {
+    padding: 120px 0
+  }
+}
+
+.banner-text {
+  position: relative;
+  z-index: 5;
+}
+
+.heading-logo a {
+  color: #fff;
+}
+
+.banner-logo {
+  clear: both;
+  width: 200px;
+  position: absolute;
+  right: -40px;
+  bottom: -40px;
+  z-index: 4;
+}
+
+@media (min-width:768px) {
+  .banner-logo {
+    clear: both;
+    width: 400px;
+    position: absolute;
+    right: -80px;
+    bottom: -80px;
+  }
+}
+
+.banner-text {
+  font-style: italic;
+}
+
+.icon-wrapper {
+  text-align: center;
+}
+
+.icon-wrapper img {
+  max-width: 200px;
+}
+
+.card  {
+  display: inline-block;
+  vertical-align: top;
+  box-shadow: 0 0 2px rgba(0,0,0,0.6);
+  border-radius: 5px;
+  padding: 0;
+  margin: 15px 0 30px;
+  background-color: #fff;
+  min-height: 430px;
+  position: relative;
+  cursor: pointer;
+  border: none;
+  width: 100%;
+}
+
+.card:hover,
+.card:focus,
+.card:active {
+  outline: none;
+  border: none;
+  color: #333;
+}
+
+.talk .title {
+  font-weight: bold;
+  font-size: 18px;
+  min-height: 50px;
+  max-height: 75px; /* fit text in one line */
+  margin: 0 0 10px;
+  padding: 15px 15px 0;
+  line-height: 1.2;
+}
+
+@media (min-width: 768px) {
+  .talk .title {
+    max-height: 55px; /* fit text in one line */
+  }
+}
+
+.talk .separator {
+  border-width: 3px;
+  border-color: #58c8e0;
+  margin: 0;
+}
+
+.talk .description {
+  overflow: hidden;
+  padding: 15px 15px 0;
+  text-align: center;
+}
+
+.card .description p, 
+.card .description ul,
+.card .description ol,
+.card .description pre {
+  background: transparent;
+  border: 0;
+  font-family: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+.card .description ul,
+.card .description ol {
+  margin: 0;
+  padding: 0 0 0 20px;
+}
+
+.talk .fullname {
+  background-color: #58c8e0;
+  margin: 0;
+  padding: 15px;
+  color: #fff;
+  text-align: right;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .medium-feed-image img {
+    max-width: 300px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+  }
+}
+
+.venue-home h2 {
+    margin-bottom: 2rem;
+}
+@media (min-width: 768px) {
+    .venue-home .city-level p { margin-top: -4.4rem; }
+    .venue-home .country-level p { margin-top: 0; }
+}
+.js .venue-home {
+    position: relative;
+    padding: 0;
+/*    padding: 1.5rem;*/
+}
+.js .venue-home h2 {
+    position: absolute;
+    z-index: 100;
+    color: black;
+    width: auto;
+    margin: 0;
+    padding:0;
+    font-size: 3rem;
+    right: 1.2rem;
+    top:   0.55rem;
+}
+.js .leaflet-map {
+    height: 555px;
+    color: black;
+    width: 80%;
+    margin: auto;
+}
+.js .leaflet-map a { border-bottom: none; }
+.js .venue-home .city-level    { width: 65%; border-left: 1px solid #444;}
+.js .venue-home .country-level { width: 35%; float: left; }
+@media (max-width: 767px) {
+    .js .venue-home { padding: 0; }
+    .js .venue-home h2 {
+        right: 5%;
+        top:   5%;
+        font-size: 2rem;
+        text-shadow: rgba(0,0,0,0.5) 0 0 1px;
+    }
+    .js .venue-home .city-level    { width: 100%; }
+    .js .venue-home .country-level { display: none; }
+}
+@media (min-height: 300px) { .js .leaflet-map { height: 250px; } }
+@media (min-height: 450px) { .js .leaflet-map { height: 425px; } }
+@media (min-height: 550px) { .js .venue-home .leaflet-map { height: 535px; } }
+@media (min-height: 630px) { .js .venue-home .leaflet-map { height: 620px; } }
+@media (min-height: 725px) { .js .venue-home .leaflet-map { height: 725px; } }
+@media (min-height: 800px) { .js .venue-home .leaflet-map { height: 800px; } }
+
+@media (min-width: 768px) {
+  .js .leaflet-map {
+   width: 100%;
+  }
+}
+
+.hasgeek-logo {
+    background: url(../img/hasgeek-logo.png) no-repeat scroll center center;
+    width:  130px;
+    height: 120px;
+    -webkit-border-radius: 30px 30px 30px 0;
+            border-radius: 30px 30px 30px 0;
+}
+a.hasgeek-logo:hover { background-color: rgba(255,255,255,0.15); }

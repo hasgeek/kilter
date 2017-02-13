@@ -1,0 +1,12 @@
+<section id="annoucement" class="section push-four">
+  <div class="container">
+    <div class="row">
+      {% with f = fragment('2017', 'introduction') %}
+        <div class="large col-xs-12">{{ f.content }}</div>
+      {% endwith %}
+      {% with f = fragment('2017', 'why-attend') %}
+        <div class="regular space-two col-xs-12">{{ f.content }}</div>
+      {% endwith %}
+    </div><!-- /row -->
+  </div><!-- /container -->
+</section><!-- /about -->

@@ -1,0 +1,64 @@
+/* ========= */
+/* = Theme = */
+/* ========= */
+
+body{
+    background-color: $white; 
+    color: #333;
+}
+
+a {
+    color: inherit;
+}
+a:hover,
+a:focus {
+    text-decoration: none;
+}
+
+.link-silent a,
+a.link-silent   { border-bottom: none; }
+
+hr{
+    border-top: 1px solid #DAD6D0;
+}
+
+.prose.prose-type a { border-bottom: none; text-decoration: underline; }
+
+button, .button {
+  background-color: #e15d36;
+  padding: 12px;
+  color: #fff;
+  font-size: 24px;
+  border-radius: 5px;
+}
+
+.btn-shadow {
+  box-shadow: 0 0 2px rgba(0,0,0,0.6);
+}
+
+
+/*  Colours  */
+
+.black          { color: #000000 !important; }
+.dark           { color: #444444 !important; }
+.gray           { color: #AAAAAA !important; }
+.lightgray      { color: #CCCCCC !important; }
+.light          { color: #EEEEEE !important; }
+.red            { color: #FF3333 !important; }
+.white          { color: #FFFFFF !important; }
+.faded          { color: rgba(255,255,255,.8) !important; }
+.blue           { color: #4487A6 !important; }
+.skyblue        { color: #68CFFF !important; }
+.silver         { color: #CFE2E0 !important; }
+.orange         { color: #CF6F01 !important; }
+.yellow         { color: #E6A813 !important; }
+.darkblue       { color: $darkblue !important; }
+.darkyellow     { color: $darkyellow !important; }
+.lightblue      { color: $lightblue !important; }
+.lightyellow    { color: $lightyellow !important; }   
+.twitter-blue   { color: #55acee !important;}
+
+
+.fill-kiltergreen { background-color: #8ac97b; }
+.fill-kilterblue { background-color: #b9e0cb; }
+.fill-kilterorange { background-color: #faaa55; }

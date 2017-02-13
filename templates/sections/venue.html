@@ -1,0 +1,32 @@
+{% set venue_url = node.properties.url %}
+{% set venue = getnode(path=venue_url).data['venue'] %}
+
+<section id="venue" class="venue push-four fill-kilterorange clearfix">
+  <div class="container">
+    <div class="row">
+      <h3 class="huge col-xs-12">Venue</h3>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <h4 class="large">{{ venue.title|safe }}</h4>
+        <p class="regular">{{ venue.address|safe }}</p>
+      </div>
+      <div class="no-js-hidden push-one col-xs-12">
+        <div class="clearfix">
+          <div class="border-one leaflet-map" id="toner"
+            data-label="{{ venue.map.osm.label }}"
+            data-zoom="{{ venue.map.osm.zoom }}"
+            data-marker="{{ venue.map.osm.marker }}">
+            <p class="text-center regular">Loading ...</p>
+          </div>
+        </div>
+      </div>
+
+      {% if venue.moreinfolink %}
+      <div class="push-two-top col-xs-12 text-center">
+        <a href="{{ venue.moreinfolink|safe }}" class="button link-silent btn-shadow" target="_blank">Find directions</a>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</section>

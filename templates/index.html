@@ -1,23 +1,130 @@
 {% from "baseframe/components.html" import networkbar with context -%}
 {% extends theme("layout.html") %}
 
-{% block titletags -%}
-  <title>{% block title %}{{ website.title }}{% endblock %}</title>
-  <meta name="DC.title" content="{{ website.title }}"/>
-{%- endblock %}
-{% block description %}{{ node.description }}{% endblock %}
-
-{% block headerbox %}
-<header class="header">
-  {{ networkbar(siteid='events', login=true) }}
-  <div class="container banner">
+{% block banner %}
+<header class="clearfix">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 banner-text">
+        <h1 class="extra-huge heading-logo"><a href="/2017" class="link-silent">Kilter</a></h1>
+        {% if node.properties.date %}
+          <h2 class="large push-half">{{ node.properties.date }}</h2>
+        {% endif %}
+        {% if node.properties.venue %}
+          <h2 class="large push-half">{{ node.properties.venue }}</h2>
+        {% endif %}
+        {% if node.properties.buy_ticket %}
+          <div class="push-two-top">
+            <a href="/#tickets" class="button link-silent smooth-scroll">Buy tickets</a>
+          </div>
+        {% elif node.properties.propose_talk %}
+          <div class="push-two-top">
+            <a href="{{ node.properties.propose_talk }}" class="button link-silent btn-shadow" target="_blank">Propose a talk</a>
+          </div>
+        {% endif %}
+      </div>
+      <div class="banner-logo">
+        <img src="{{ theme_static('img/kilter-banner-logo.png') }}" alt="Kilter" />
+      </div>
+    </div>
   </div>
 </header>
 {% endblock %}
 
-{% block main %}
-{% include theme("inc/introduction.html") %}
+{% block navtype %}
+{% endblock %}
+
+{% block content %}
+  {% include theme("sections/introduction.html") %}
+  {% if node.properties.theme %}
+    {% include theme("sections/theme.html") %}
+  {% endif %}
+  {% if node.properties.blog %}
+    {% include theme("sections/blog.html") %}
+  {% endif %}
+  {% if node.properties.tickets %}
+    {% include theme("sections/tickets.html") %}
+  {% endif %}
+  {% include theme("sections/venue.html") %}
+  {% include theme("sections/sponsors-summary.html") %}
 {% endblock %}
 
 {% block footerscripts %}
+<style type="text/css">
+  #boxoffice-widget .boxoffice-button-action {        
+    background-color: #FAA51A;        
+    border-color:  #d98f15;       
+    color: #fff;        
+  }       
+  #boxoffice-widget .boxoffice-button-info {        
+    background-color: #5BC0DE;        
+    border-color: #2A9CBE;        
+    color: #fff;        
+  }       
+  #boxoffice-widget .payment-stages-bg {        
+    background-color: #8ac97b;    
+  }       
+  #boxoffice-widget .progress-indicator>li {        
+    color: #FFF;        
+  }
+  #boxoffice-widget .progress-indicator>li.active, .progress-indicator > li.active .bubble {
+    color: #337AB7;
+  }  
+  #boxoffice-widget .category-heading {       
+    background-color: #8ac97b;        
+    border-bottom: 3px solid #8ac97b;       
+    color: rgba(0,0,0,0.6);     
+    line-height: 1.1;     
+    font-weight: bold;   
+  }       
+  #boxoffice-widget .category-heading:after {       
+    border-color: #8ac97b #fff #8ac97b #8ac97b; 
+  }   
+</style> 
+
+<script>
+$(document).ready(function() {  
+  var url = "{{ node.properties.blog }}"
+  var blog = [];
+  feednami.load(url).then(feed => {
+    //Copy only six blog entries
+    var entries = feed.entries.slice(0, 6);
+    for(let entry of entries){
+      blog.push({"title": entry.title, "author":entry.author, "description": entry.description, "link": entry.link})
+    }
+    parseJson(blog, '#entries-wrapper', '#entries', 'blog');
+  });
+
+  var boxofficeUrl = "https://boxoffice.hasgeek.com";
+
+  $.get({       
+    url: boxofficeUrl+"/api/1/boxoffice.js",    
+    crossDomain: true       
+  }).done(function(data) {        
+    var boxofficeScript = document.createElement('script');       
+    boxofficeScript.innerHTML = data.script;        
+    document.getElementsByTagName('body')[0].appendChild(boxofficeScript);        
+    window.Boxoffice.init({       
+      org: "hasgeek",       
+      itemCollection: "{{ node.properties.item_collection }}",     
+      paymentDesc: "{{ node.properties.payment_desc }}"       
+    });       
+  }).fail(function(response) {        
+    var error_msg;    
+    if (response.readyState === 4) {    
+      error_msg = "Server error, please try again later";   
+    }   
+    else if (response.readyState === 0) {   
+      if(!navigator.onLine) {   
+        error_msg = "Unable to connect. There is no network!";    
+      }   
+      else {    
+        error_msg = "<p>Unable to connect. If you are behind a firewall or using any script blocking extension (like Privacy Badger).<p></p> Please ensure your browser can load boxoffice.hasgeek.com, api.razorpay.com and checkout.razorpay.com</p>";    
+      }   
+    }   
+    $('#boxoffice-widget p').html(error_msg);   
+  }); 
+
+});
+</script>
 {% endblock %}
