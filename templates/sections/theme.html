@@ -1,11 +1,11 @@
 {% set topics = getnode(path='theme').data['topics'] %}
 
-<section id="theme" class="section push-four fill-kiltergreen">
+<section id="discussions" class="section push-four fill-kiltergreen">
   <div class="container">
     <div class="row">
       <h3 class="huge col-xs-12">{{ getnode(path='theme').title }}</h3>
       {% for topic in topics %}
-        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 discussions">
+        <div class="col-xs-12 col-sm-6 col-md-4 discussions">
           <div class="icon-wrapper"><img src="{{ topic.icon }}" alt="{{ topic.title }}" /></div>
           <h4 class="large text-center space-half-bottom nospace-top">{{ topic.title }}</h4>
           <p class="regular">{{ topic.description|safe }}</p>

@@ -43,14 +43,14 @@
 <!--[if lte IE 8]>
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/leaflet/0.6.3/leaflet.ie.css" />
 <![endif]-->
-<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans:300,400italic,600italic,400,600" />
-<link href='//fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700' rel='stylesheet' type='text/css'>
-<link href='//fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
-<link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700|Montserrat:400,700" rel="stylesheet"> 
-<link href='//fonts.googleapis.com/css?family=Syncopate:400,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,400i,600,700">
 <link rel="stylesheet" href="/_baseframe/css/networkbar.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,400i,600,700"> 
-
+<link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+    #mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
+    /* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
+       We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+</style>
 
 </head>
 <body>
@@ -69,6 +69,7 @@
 {%- endblock %}
 
 {% block basefooter -%}
+
   <footer id="about" class="page-footer push-four fill-kilterblue clearfix">
     <div class="text-center">
       <div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-12">
@@ -84,15 +85,15 @@
         </div>
         {% endwith %}
         
-        <p class="secondary">Kilter is a conference by <a href="//hasgeek.com" target="_blank">HasGeek</a>. Copyright &copy; 2017. All rights reserved.</p>
+        <p class="regular">Kilter is a conference by <a href="//hasgeek.com" target="_blank">HasGeek</a>. Copyright &copy; 2017. All rights reserved.</p>
         <p><a href="mailto:info@hasgeek.com?subject=Hello Kilter">info@hasgeek.com</a> /
         <a href="tel:+918067684422" class="link-silent">+91-80-67684422</a></p>
-        <div class="legible space-one centered">
+        <div class="large space-one centered">
           <ul class="list-plain">
             <li class="inline-block gap-1q"><a href="https://twitter.com/KilterCon" target="_blank" class="silent link-silent"><i class="fa fa-twitter"></i></a></li>
             <li class="inline-block gap-1q"><a href="https://www.facebook.com/KilterCon" target="_blank" class="silent link-silent"><i class="fa fa-facebook"></i></a></li>
             <li class="inline-block gap-1q"><a href="https://blog.kilter.in/" target="_blank" class="silent link-silent"><i class="fa fa-medium"></i></a></li>
-            <li class="inline-block gap-1q"><a href="https://www.youtube.com/user/hasgeek" target="_blank" class="silent link-silent"><i class="fa fa-youtube"></i></a></li>
+            <li class="inline-block gap-1q"><a href="https://www.youtube.com/channel/UCJNrlgmpvM0qTWEJmTj6crg" target="_blank" class="silent link-silent"><i class="fa fa-youtube"></i></a></li>
             <li class="inline-block gap-1q"><a href="https://www.flickr.com/photos/hasgeek/sets/" target="_blank" class="silent link-silent"><i class="fa fa-flickr"></i></a></li>
           </ul>
         </div>
@@ -132,6 +133,9 @@
     ga('send', 'pageview');
   }
 </script>
+
+<script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script>
+<script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[3]='FULLNAME';ftypes[3]='text';fnames[4]='JOBTITLE';ftypes[4]='text';fnames[1]='COMPANY';ftypes[1]='text';fnames[2]='TWITTER';ftypes[2]='text';fnames[5]='PRIVATEKEY';ftypes[5]='text';fnames[6]='UID';ftypes[6]='text';fnames[7]='CITY';ftypes[7]='text';fnames[8]='PHONE';ftypes[8]='number';fnames[9]='MOBILE';ftypes[9]='text';fnames[10]='CODE';ftypes[10]='text';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
 
 {% block footerscripts %}
 {% endblock %}

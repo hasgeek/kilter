@@ -17,10 +17,6 @@ function parseJson(data, wrapper, div, type) {
       content: data
     },
     complete: function() {
-      $.each($('.card .title'), function(index, title) {
-        updateFontSize(title);
-      });
-
       var clickElem = wrapper + " .click";
 
       $(clickElem).click(function(event) {

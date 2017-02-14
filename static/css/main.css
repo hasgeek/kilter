@@ -530,7 +530,7 @@ button, .button {
 }
 
 .dark {
-  color: #444444 !important;
+  color: #333333 !important;
 }
 
 .gray {
@@ -579,6 +579,34 @@ button, .button {
 
 .twitter-blue {
   color: #55acee !important;
+}
+
+.kilterblue {
+  color: #b9e4f1;
+}
+
+.kilterbluegreen {
+  color: #86d2db;
+}
+
+.kilterdarkblue {
+  color: #58e8c0;
+}
+
+.kilterlight {
+  color: #f5f6fb;
+}
+
+.kilterorange {
+  color: #f58a73;
+}
+
+.kilteryellow {
+  color: #faaa55;
+}
+
+.kiltergreen {
+  color: #8ac97b;
 }
 
 .fill-kiltergreen {
@@ -753,8 +781,7 @@ html, body, #page {
 }
 
 header {
-  background-color: #b9e4f1;
-  color: #fff;
+  background-color: #58c8e0;
   padding: 80px 0;
   position: relative;
   overflow: hidden;
@@ -769,6 +796,7 @@ header {
 .banner-text {
   position: relative;
   z-index: 5;
+  color: #fff;
 }
 
 .heading-logo a {
@@ -797,10 +825,11 @@ header {
   font-style: italic;
 }
 
-.discussions {
-  min-height: 350px;
+@media (min-width: 768px) {
+  .discussions {
+    min-height: 350px;
+  }
 }
-
 .icon-wrapper {
   text-align: center;
 }
@@ -809,6 +838,13 @@ header {
   max-width: 200px;
 }
 
+@media (min-width: 768px) {
+  .card-wrapper {
+    display: inline-block;
+    float: none;
+    vertical-align: top;
+  }
+}
 .card {
   display: inline-block;
   vertical-align: top;
@@ -817,13 +853,18 @@ header {
   padding: 0;
   margin: 15px auto 30px;
   background-color: #fff;
-  min-height: 430px;
   position: relative;
   cursor: pointer;
   border: none;
   width: 100%;
 }
 
+@media (min-width: 1200px) {
+  .card {
+    min-height: 440px;
+    overflow: hidden;
+  }
+}
 .card:hover,
 .card:focus,
 .card:active {
@@ -834,21 +875,12 @@ header {
 
 .talk .title {
   font-weight: bold;
-  font-size: 18px;
-  min-height: 50px;
-  max-height: 75px;
-  /* fit text in one line */
+  font-size: 22px;
   margin: 0 0 10px;
   padding: 15px 15px 0;
-  line-height: 1.2;
+  line-height: 24px;
 }
 
-@media (min-width: 768px) {
-  .talk .title {
-    max-height: 55px;
-    /* fit text in one line */
-  }
-}
 .talk .separator {
   border-width: 3px;
   border-color: #58c8e0;
@@ -856,9 +888,8 @@ header {
 }
 
 .talk .description {
-  overflow: hidden;
-  padding: 15px 15px 0;
-  text-align: center;
+  padding: 15px;
+  position: relative;
 }
 
 .card .description p,
@@ -884,9 +915,24 @@ header {
   padding: 15px;
   color: #fff;
   text-align: right;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
+  border-radius: 0 0 5px 5px;
+}
+
+@media (min-width: 1200px) {
+  .talk .fullname {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+}
+.medium-feed-image {
+  text-align: center;
+}
+
+.medium-feed-image img {
+  max-width: 300px;
+  border-radius: 5px;
+  margin-bottom: 15px;
 }
 
 @media (min-width: 768px) {
@@ -912,7 +958,6 @@ header {
 .js .venue-home {
   position: relative;
   padding: 0;
-  /*    padding: 1.5rem;*/
 }
 
 .js .venue-home h2 {
@@ -1013,4 +1058,46 @@ header {
 
 a.hasgeek-logo:hover {
   background-color: rgba(255, 255, 255, 0.15);
+}
+
+.section-divider {
+  background: transparent url("https://images.hasgeek.com/embed/file/e635625dbf6441698323f1671bf47143") bottom center repeat-x;
+}
+
+#mc_embed_signup {
+  width: 300px !important;
+  font-size: 16px !important;
+}
+
+@media (min-width: 1200px) {
+  #mc_embed_signup {
+    width: 30% !important;
+  }
+}
+#mc-embedded-subscribe-form {
+  padding: 0 15px !important;
+}
+
+#mc_embed_signup h2 {
+  font-size: 24px !important;
+}
+
+#mc_embed_signup div#mce-responses {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+#mc_embed_signup div.response {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+#mc_embed_signup .button {
+  background-color: #e15d36 !important;
+  padding: 12px !important;
+  color: #fff !important;
+  font-size: 24px !important;
+  border-radius: 5px !important;
+  margin: 10px 0 0 !important;
+  height: auto !important;
 }

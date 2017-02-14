@@ -43,7 +43,7 @@ button, .button {
 /*  Colours  */
 
 .black          { color: #000000 !important; }
-.dark           { color: #444444 !important; }
+.dark           { color: $dark !important; }
 .gray           { color: #AAAAAA !important; }
 .lightgray      { color: #CCCCCC !important; }
 .light          { color: #EEEEEE !important; }
@@ -56,6 +56,14 @@ button, .button {
 .orange         { color: #CF6F01 !important; }
 .yellow         { color: #E6A813 !important; }
 .twitter-blue   { color: #55acee !important;}
+
+.kilterblue { color: $kilterblue; }
+.kilterbluegreen  { color: $kilterbluegreen; }
+.kilterdarkblue  { color: $kilterdarkblue; }
+.kilterlight  { color: $kilterlight; }
+.kilterorange  { color: $kilterorange; }
+.kilteryellow { color: $kilteryellow; }
+.kiltergreen { color: $kiltergreen; }
 
 
 .fill-kiltergreen { background-color: #8ac97b; }

@@ -1,4 +1,4 @@
-<section id="blog" class="push-three-top push-two-bottom clearfix">
+<section id="blog" class="push-four section-divider clearfix">
   <div class="container">
     <div class="row">
       <h3 class="huge col-xs-12">Kilter blog</h3>
@@ -10,12 +10,10 @@
               <div class="col-xs-12 col-sm-6 col-md-4 card-wrapper">
                 <a class="card click link-silent" data-target="{{ link }}" data-label="{{ title }}" href="{{ link }}" target="_blank">
                   <div class="talk">
-                    <p class="title large"><span>{{ title }}</span></p>
+                    <p class="title"><span>{{ title }}</span></p>
                     <hr class="separator">
-                    <div class="description regular">
-                      {{{ description }}}
-                    </div>
-                    <p class="fullname regular"><span>{{author}}</span></p>
+                    <div class="description">{{{ description }}}</div>
+                    <p class="fullname regular"><span>{{ author }}</span></p>
                   </div>
                 </a>
               </div>
@@ -23,8 +21,8 @@
           </script>
         {%endraw%}
       </div>
-      <div class="push-two-top col-xs-12">
-        <a href="https://blog.kilter.in/" class="button btn-shadow pull-right" target="_blank">Read more on Kilter blog</a>
+      <div class="push-two col-xs-12">
+        <a href="{{ node.properties.blog }}" class="button btn-shadow pull-right" target="_blank">Read more on Kilter blog</a>
       </div>
     </div>
   </div>
