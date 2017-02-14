@@ -6,7 +6,6 @@ function initLeaflets() {
   }
 
   $('.leaflet-map').each(function initLeafletMap () {
-      console.log("leaflet-map", this);
       var $container = $(this)
           , defaults = {
                 zoom: 5

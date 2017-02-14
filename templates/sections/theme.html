@@ -11,6 +11,11 @@
           <p class="regular">{{ topic.description|safe }}</p>
         </div>
       {% endfor %}
+      {% if node.properties.propose_talk %}
+        <div class="push-two-top text-center clearboth">
+          <a href="{{ node.properties.propose_talk }}" class="button btn-shadow" target="_blank">Propose a talk</a>
+        </div>
+      {% endif %}
     </div><!-- /row -->
   </div><!-- /container -->
 </section><!-- /about -->

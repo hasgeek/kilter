@@ -8,7 +8,7 @@ body{
 }
 
 a {
-    color: inherit;
+    color: $kilterorange;
 }
 a:hover,
 a:focus {
@@ -16,7 +16,10 @@ a:focus {
 }
 
 .link-silent a,
-a.link-silent   { border-bottom: none; }
+a.link-silent   { 
+  color: inherit;
+  border-bottom: none; 
+}
 
 hr{
     border-top: 1px solid #DAD6D0;
@@ -52,10 +55,6 @@ button, .button {
 .silver         { color: #CFE2E0 !important; }
 .orange         { color: #CF6F01 !important; }
 .yellow         { color: #E6A813 !important; }
-.darkblue       { color: $darkblue !important; }
-.darkyellow     { color: $darkyellow !important; }
-.lightblue      { color: $lightblue !important; }
-.lightyellow    { color: $lightyellow !important; }   
 .twitter-blue   { color: #55acee !important;}
 
 

@@ -6,12 +6,12 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-12 banner-text">
-        <h1 class="extra-huge heading-logo"><a href="/2017" class="link-silent">Kilter</a></h1>
+        <h1 class="extra-huge heading-logo nospace"><a href="/2017" class="link-silent">Kilter</a></h1>
         {% if node.properties.date %}
-          <h2 class="large push-half">{{ node.properties.date }}</h2>
+          <h2 class="large push-one nospace">{{ node.properties.date }}</h2>
         {% endif %}
         {% if node.properties.venue %}
-          <h2 class="large push-half">{{ node.properties.venue }}</h2>
+          <h2 class="large push-one nospace">{{ node.properties.venue }}</h2>
         {% endif %}
         {% if node.properties.buy_ticket %}
           <div class="push-two-top">
@@ -86,6 +86,7 @@
 $(document).ready(function() {  
   var url = "{{ node.properties.blog }}"
   var blog = [];
+  feednami.setPublicApiKey('27e9bf43bffd7b67277ff3639b85da428fac21bb4997f1964d4234c237c5e993');
   feednami.load(url).then(feed => {
     //Copy only six blog entries
     var entries = feed.entries.slice(0, 6);

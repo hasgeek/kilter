@@ -489,7 +489,7 @@ body {
 }
 
 a {
-  color: inherit;
+  color: #f58a73;
 }
 
 a:hover,
@@ -499,6 +499,7 @@ a:focus {
 
 .link-silent a,
 a.link-silent {
+  color: inherit;
   border-bottom: none;
 }
 
@@ -576,22 +577,6 @@ button, .button {
   color: #E6A813 !important;
 }
 
-.darkblue {
-  color: #549EAF !important;
-}
-
-.darkyellow {
-  color: #FAA51A !important;
-}
-
-.lightblue {
-  color: #A1DADB !important;
-}
-
-.lightyellow {
-  color: #F0CF9A !important;
-}
-
 .twitter-blue {
   color: #55acee !important;
 }
@@ -628,7 +613,8 @@ i, .button,
 }
 
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-  font-family: "Josefin Sans", sans-serif;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: bold;
 }
 
 .extra-huge {
@@ -811,6 +797,10 @@ header {
   font-style: italic;
 }
 
+.discussions {
+  min-height: 350px;
+}
+
 .icon-wrapper {
   text-align: center;
 }
@@ -825,7 +815,7 @@ header {
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.6);
   border-radius: 5px;
   padding: 0;
-  margin: 15px 0 30px;
+  margin: 15px auto 30px;
   background-color: #fff;
   min-height: 430px;
   position: relative;
