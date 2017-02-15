@@ -23,6 +23,11 @@ header {
   width: 50px;
 }
 
+.logo-text {
+  font-family: 'Bellaboo';
+  font-weight: 400;
+}
+
 @media (min-width: 480px) {
   .banner-text {
     top: 20vh;
@@ -299,4 +304,5 @@ a.hasgeek-logo:hover { background-color: rgba(255,255,255,0.15); }
   border-radius: 5px !important;
   margin: 10px 0 0 !important;
   height: auto !important;
+  line-height: 1!important;
 }

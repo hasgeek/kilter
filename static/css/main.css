@@ -655,6 +655,10 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   font-weight: 600;
 }
 
+@font-face {
+  font-family: 'Bellaboo';
+  src: url("https://static.hasgeek.co.in/static/fonts/bellaboo-regular.ttf");
+}
 .extra-huge {
   font-size: 48px;
   line-height: 54px;
@@ -815,6 +819,11 @@ header {
 .banner-logo {
   clear: both;
   width: 50px;
+}
+
+.logo-text {
+  font-family: 'Bellaboo';
+  font-weight: 400;
 }
 
 @media (min-width: 480px) {
@@ -1136,4 +1145,5 @@ a.hasgeek-logo:hover {
   border-radius: 5px !important;
   margin: 10px 0 0 !important;
   height: auto !important;
+  line-height: 1 !important;
 }
