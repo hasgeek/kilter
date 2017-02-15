@@ -516,7 +516,7 @@ button, .button {
   background-color: #e15d36;
   padding: 12px;
   color: #fff;
-  font-size: 24px;
+  font-size: 18px;
   border-radius: 5px;
 }
 
@@ -939,7 +939,7 @@ header {
   background-color: #58c8e0;
   margin: 0;
   padding: 15px;
-  color: #fff;
+  color: #333;
   text-align: right;
   border-radius: 0 0 5px 5px;
 }
@@ -1133,7 +1133,7 @@ a.hasgeek-logo:hover {
   background-color: #e15d36 !important;
   padding: 12px !important;
   color: #fff !important;
-  font-size: 24px !important;
+  font-size: 18px !important;
   border-radius: 5px !important;
   margin: 10px 0 0 !important;
   height: auto !important;

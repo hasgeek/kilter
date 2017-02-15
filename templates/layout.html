@@ -71,31 +71,35 @@
 {% block basefooter -%}
 
   <footer id="about" class="page-footer push-four fill-kilterblue clearfix">
-    <div class="text-center">
+    <div>
       <div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-12">
-        <h3><a class="ir hasgeek-logo center-block space-one-top link-silent" href="//hasgeek.com">HasGeek</a></h3>
-        {% with f = fragment('2017', 'about-hasgeek') %}
-          {{ f.content }}
-        {% endwith %}
+        <div class="text-left">
+          <h3><a class="ir hasgeek-logo center-block space-one-top link-silent" href="//hasgeek.com">HasGeek</a></h3>
+          {% with f = fragment('2017', 'about-hasgeek') %}
+            {{ f.content }}
+          {% endwith %}
 
-        {% with f = fragment('2017', 'credits') %}
-        <div class="credits space-two">
-          <h2 class="calm">{{ f.title }}</h2>
-          {{ f.content }}
+          {% with f = fragment('2017', 'credits') %}
+          <div class="credits space-two">
+            <h2 class="calm">{{ f.title }}</h2>
+            {{ f.content }}
+          </div>
+          {% endwith %}
         </div>
-        {% endwith %}
         
-        <p class="regular">Kilter is a conference by <a href="//hasgeek.com" target="_blank">HasGeek</a>. Copyright &copy; 2017. All rights reserved.</p>
-        <p><a href="mailto:info@hasgeek.com?subject=Hello Kilter">info@hasgeek.com</a> /
-        <a href="tel:+918067684422" class="link-silent">+91-80-67684422</a></p>
-        <div class="large space-one centered">
-          <ul class="list-plain">
-            <li class="inline-block gap-1q"><a href="https://twitter.com/KilterCon" target="_blank" class="silent link-silent"><i class="fa fa-twitter"></i></a></li>
-            <li class="inline-block gap-1q"><a href="https://www.facebook.com/KilterCon" target="_blank" class="silent link-silent"><i class="fa fa-facebook"></i></a></li>
-            <li class="inline-block gap-1q"><a href="https://blog.kilter.in/" target="_blank" class="silent link-silent"><i class="fa fa-medium"></i></a></li>
-            <li class="inline-block gap-1q"><a href="https://www.youtube.com/channel/UCJNrlgmpvM0qTWEJmTj6crg" target="_blank" class="silent link-silent"><i class="fa fa-youtube"></i></a></li>
-            <li class="inline-block gap-1q"><a href="https://www.flickr.com/photos/hasgeek/sets/" target="_blank" class="silent link-silent"><i class="fa fa-flickr"></i></a></li>
-          </ul>
+        <div class="text-center">
+          <p class="regular">Kilter is a conference by <a href="//hasgeek.com" target="_blank">HasGeek</a>. Copyright &copy; 2017. All rights reserved.</p>
+          <p><a href="mailto:info@hasgeek.com?subject=Hello Kilter">info@hasgeek.com</a> /
+          <a href="tel:+918067684422" class="link-silent">+91-80-67684422</a></p>
+          <div class="large space-one centered">
+            <ul class="list-plain">
+              <li class="inline-block gap-1q"><a href="https://twitter.com/KilterCon" target="_blank" class="silent link-silent"><i class="fa fa-twitter"></i></a></li>
+              <li class="inline-block gap-1q"><a href="https://www.facebook.com/KilterCon" target="_blank" class="silent link-silent"><i class="fa fa-facebook"></i></a></li>
+              <li class="inline-block gap-1q"><a href="https://blog.kilter.in/" target="_blank" class="silent link-silent"><i class="fa fa-medium"></i></a></li>
+              <li class="inline-block gap-1q"><a href="https://www.youtube.com/channel/UCJNrlgmpvM0qTWEJmTj6crg" target="_blank" class="silent link-silent"><i class="fa fa-youtube"></i></a></li>
+              <li class="inline-block gap-1q"><a href="https://www.flickr.com/photos/hasgeek/sets/" target="_blank" class="silent link-silent"><i class="fa fa-flickr"></i></a></li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
