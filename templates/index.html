@@ -4,14 +4,14 @@
 {% block banner %}
 <header class="clearfix">
   <div class="visible-xs">
-    {% include theme("mobile-banner.html") %}
+    <img src="{{ theme_static('img/mobile-banner.svg') }}" alt="Kilter" />
   </div>
   <div class="hidden-xs">
-    {% include theme("banner.html") %}
+    <img src="{{ theme_static('img/banner.svg') }}" alt="Kilter" />
   </div>
   <div class="container banner-text">
         <div class="banner-logo">
-          <img src="https://images.hasgeek.com/embed/file/85661074bb9248648f26ad67fd233022" alt="Kilter" />
+          <img src="https://images.hasgeek.com/embed/file/b8c5be6790ec4ab28cb07d65dba68403" alt="Kilter" />
         </div>
         <h1 class="extra-huge heading-logo nospace"><a href="/2017" class="link-silent">Kilter</a></h1>
         {% if node.properties.date %}
