@@ -161,6 +161,7 @@ header {
 
 .medium-feed-image img {
   max-width: 300px;
+  width: 100%;
   border-radius: 5px;
   margin-bottom: 15px;
 }
@@ -244,8 +245,14 @@ a.hasgeek-logo:hover { background-color: rgba(255,255,255,0.15); }
 
 //Subscribe form
 #mc_embed_signup {
-  width: 300px !important;
+  width: 100% !important;
   font-size: 16px !important;
+}
+
+@media(min-width: 768px) {
+  #mc_embed_signup {
+    width: 300px !important;
+  }
 }
 
 @media(min-width: 1200px) {

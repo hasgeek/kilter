@@ -5,7 +5,7 @@
 
 /*  Families  */
 
-body, .body-type { font-family: 'Josefin Sans', sans-serif; line-height: 24px; font-size: 16px;}
+body, .body-type { font-family: 'Josefin Sans', sans-serif; line-height: 24px; font-size: 18px;}
 
 i, .button,
 .prose-type     { font-family: 'Josefin Sans', sans-serif }
@@ -33,6 +33,11 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
 }
 
 .regular {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.secondary {
   font-size: 16px;
   line-height: 24px;
 }

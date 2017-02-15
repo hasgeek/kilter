@@ -520,6 +520,16 @@ button, .button {
   border-radius: 5px;
 }
 
+button:hover,
+.button:hover,
+button:active,
+.button:active
+button:focus,
+.button:focus {
+  color: #fff;
+  outline: none;
+}
+
 .btn-shadow {
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.6);
 }
@@ -628,7 +638,7 @@ button, .button {
 body, .body-type {
   font-family: 'Josefin Sans', sans-serif;
   line-height: 24px;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 i, .button,
@@ -659,6 +669,11 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 }
 
 .regular {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.secondary {
   font-size: 16px;
   line-height: 24px;
 }
@@ -931,6 +946,7 @@ header {
 
 .medium-feed-image img {
   max-width: 300px;
+  width: 100%;
   border-radius: 5px;
   margin-bottom: 15px;
 }
@@ -1065,10 +1081,15 @@ a.hasgeek-logo:hover {
 }
 
 #mc_embed_signup {
-  width: 300px !important;
+  width: 100% !important;
   font-size: 16px !important;
 }
 
+@media (min-width: 768px) {
+  #mc_embed_signup {
+    width: 300px !important;
+  }
+}
 @media (min-width: 1200px) {
   #mc_embed_signup {
     width: 30% !important;

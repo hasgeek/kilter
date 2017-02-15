@@ -35,6 +35,16 @@ button, .button {
   border-radius: 5px;
 }
 
+button:hover, 
+.button:hover,
+button:active,
+.button:active
+button:focus,
+.button:focus {
+  color: #fff;
+  outline: none;
+}
+
 .btn-shadow {
   box-shadow: 0 0 2px rgba(0,0,0,0.6);
 }
