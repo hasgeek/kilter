@@ -3,15 +3,22 @@
 
 {% block banner %}
 <header class="clearfix">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12 banner-text">
+  <div class="visible-xs">
+    {% include theme("mobile-banner.html") %}
+  </div>
+  <div class="hidden-xs">
+    {% include theme("banner.html") %}
+  </div>
+  <div class="container banner-text">
+        <div class="banner-logo">
+          <img src="https://images.hasgeek.com/embed/file/85661074bb9248648f26ad67fd233022" alt="Kilter" />
+        </div>
         <h1 class="extra-huge heading-logo nospace"><a href="/2017" class="link-silent">Kilter</a></h1>
         {% if node.properties.date %}
-          <h2 class="large push-one nospace">{{ node.properties.date }}</h2>
+          <h2 class="large nospace">{{ node.properties.date }}</h2>
         {% endif %}
         {% if node.properties.venue %}
-          <h2 class="large push-one nospace">{{ node.properties.venue }}</h2>
+          <h2 class="large nospace">{{ node.properties.venue }}</h2>
         {% endif %}
         {% if node.properties.buy_ticket %}
           <div class="push-two-top">
@@ -23,11 +30,6 @@
           </div>
         {% endif %}
       </div>
-      <div class="banner-logo">
-        <img src="{{ theme_static('img/kilter-banner-logo.png') }}" alt="Kilter" />
-      </div>
-    </div>
-  </div>
 </header>
 {% endblock %}
 
