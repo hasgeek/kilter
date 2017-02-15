@@ -652,7 +652,7 @@ i, .button,
 
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   font-family: 'Josefin Sans', sans-serif;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .extra-huge {
@@ -1112,6 +1112,11 @@ a.hasgeek-logo:hover {
 
 #mc_embed_signup h2 {
   font-size: 24px !important;
+  font-weight: 600 !important;
+}
+
+#mc_embed_signup .mc-field-group label {
+  font-weight: 400 !important;
 }
 
 #mc_embed_signup div#mce-responses {

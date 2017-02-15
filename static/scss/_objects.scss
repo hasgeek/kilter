@@ -275,6 +275,11 @@ a.hasgeek-logo:hover { background-color: rgba(255,255,255,0.15); }
 
 #mc_embed_signup h2 {
   font-size: 24px !important;
+  font-weight: 600 !important;
+}
+
+#mc_embed_signup .mc-field-group label {
+  font-weight: 400 !important;
 }
 
 #mc_embed_signup div#mce-responses {
