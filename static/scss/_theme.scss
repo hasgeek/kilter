@@ -68,14 +68,14 @@ button:focus,
 .twitter-blue   { color: #55acee !important;}
 
 .kilterblue { color: $kilterblue; }
-.kilterbluegreen  { color: $kilterbluegreen; }
+.kilterlightblue  { color: $kilterlightblue; }
 .kilterdarkblue  { color: $kilterdarkblue; }
 .kilterlight  { color: $kilterlight; }
 .kilterorange  { color: $kilterorange; }
 .kilteryellow { color: $kilteryellow; }
 .kiltergreen { color: $kiltergreen; }
 
-
-.fill-kiltergreen { background-color: #8ac97b; }
-.fill-kilterblue { background-color: #b9e0cb; }
-.fill-kilterorange { background-color: #faaa55; }
+.fill-kilterlightblue { background-color: $kilterlightblue; }
+.fill-kiltergreen { background-color: $kiltergreen; }
+.fill-kilterblue { background-color: $kilterblue; }
+.fill-kilterorange { background-color: $kilterorange; }

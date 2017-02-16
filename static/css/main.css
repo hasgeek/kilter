@@ -489,7 +489,7 @@ body {
 }
 
 a {
-  color: #f58a73;
+  color: #faaa55;
 }
 
 a:hover,
@@ -595,7 +595,7 @@ button:focus,
   color: #b9e4f1;
 }
 
-.kilterbluegreen {
+.kilterlightblue {
   color: #86d2db;
 }
 
@@ -608,7 +608,7 @@ button:focus,
 }
 
 .kilterorange {
-  color: #f58a73;
+  color: #faaa55;
 }
 
 .kilteryellow {
@@ -619,12 +619,16 @@ button:focus,
   color: #8ac97b;
 }
 
+.fill-kilterlightblue {
+  background-color: #86d2db;
+}
+
 .fill-kiltergreen {
   background-color: #8ac97b;
 }
 
 .fill-kilterblue {
-  background-color: #b9e0cb;
+  background-color: #b9e4f1;
 }
 
 .fill-kilterorange {
