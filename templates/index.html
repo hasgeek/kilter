@@ -41,6 +41,9 @@
   {% if node.properties.blog %}
     {% include theme("sections/blog.html") %}
   {% endif %}
+  {% if node.properties.runup_events_list %}
+    {% include theme("sections/runup-events-list.html") %}
+  {% endif %}
   {% if node.properties.tickets %}
     {% include theme("sections/tickets.html") %}
   {% endif %}

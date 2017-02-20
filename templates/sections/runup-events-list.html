@@ -1,25 +1,28 @@
-{% set events = getnode(path='runup-events-list').data['runup-list'] %}
+{% set events = getnode(path='runup-events-list').data['events'] %}
 
-<section id="runup-events" class="push-two clearfix">
-  <div class="row-fluid text-center space-three-bottom">
-    <h2 class="text-center push-1q-bottom large all-caps">{{ getnode(path='runup-events-list').title }}</h2>
-    
-    <ul id='htimeline'>
-      {% for event in events %}
-        <li class='work'>
-          <input class='radio {% if event.featured %}theme-red{% else %}theme-green{% endif %}' id='work4' name='works' type='radio'>
-          <div class="relative">
-            <span class='date secondary'>{{ event.date }}</span>
-            <span class='circle'></span>
-          </div>
-          <a class="link-silent" href="{{ event.url }}">
-            <div class='content'>
-              <p class="secondary">{{ event.title }}</p>
-              <p class="tiny"><i class="fa fa-map-marker"></i> {{ event.city }}</p>
+<section id="runup-events" class="section push-four section-divider">
+  <div class="container">
+    <div class="row">
+      <h3 class="huge text-center col-xs-12">{{ getnode(path='runup-events-list').title }}</h3>
+      <div class="col-sm-8 col-sm-offset-2 col-xs-12">
+        {% for event in events  %}
+          <div class="runup-event-box {% if event.featured %}featured{% endif %}">
+            {% if event.video_url %}
+              <a href="{{event.video_url}}" class="video-link click" target="_blank" data-target="{{event.video_url}}" data-label="Runup event video"><i class="fa fa-play-circle-o"></i><img src={{ event.banner}} class="banner"/></a>
+            {% else %}
+              <a href="{{event.url}}" data-target="{{event.url}}" data-label="{{ event.title }}" class="banner-wrapper" target="_blank"><img src="{{ event.banner}}" class="banner"/></a>
+            {% endif %}
+            <div class="pad-half push-one-bottom">
+              <h3 class="space-one-top nospace-bottom event-title regular">{{ event.title }}</h3>
+              <p class="space-half-top nospace-bottom event-speaker">{{ event.speaker }}</p>
+              {%if event.date %}<p class="space-half-top nospace-bottom secondary"><i class="fa fa-calendar"></i> {{ event.date }}</p>{% endif %}
+              {%if event.time %}<p class="space-half-top nospace-bottom secondary"><i class="fa fa-clock-o"></i> {{ event.time }}</p>{% endif %}
+              <p class="space-half-top nospace-bottom secondary"><i class="fa fa-map-marker"></i> {{ event.venue|safe }}</p>
+              {% if event.featured %}<a href="{{event.url}}" class="button space-one" data-target="{{event.url}}" data-label="{{ event.title }}">Interested</a>{% endif %}
             </div>
-          </a>
-        </li>
-      {% endfor %}
-    </ul>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
   </div>
 </section>
