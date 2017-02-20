@@ -63,10 +63,17 @@ header {
   }
 }
 
+.discussions {
+  margin: 15px auto;
+}
+
 @media (min-width: 768px) {
    .discussions {
-    min-height: 350px;
-  } 
+    margin: 20px auto;
+  }
+  .icon-wrapper img {
+    padding: 10% 0 0;
+  }
 }
 
 .icon-wrapper {

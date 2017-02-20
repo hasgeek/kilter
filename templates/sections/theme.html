@@ -4,18 +4,24 @@
   <div class="container">
     <div class="row">
       <h3 class="huge text-center col-xs-12">{{ getnode(path='theme').title }}</h3>
-      {% for topic in topics %}
-        <div class="col-xs-12 col-sm-6 col-md-4 discussions">
-          <div class="icon-wrapper"><img src="{{ topic.icon }}" alt="{{ topic.title }}" /></div>
-          <h4 class="large text-center space-half-bottom nospace-top">{{ topic.title }}</h4>
-          <p class="regular">{{ topic.description|safe }}</p>
-        </div>
-      {% endfor %}
-      {% if node.properties.propose_talk %}
-        <div class="push-two-top text-center clearboth">
-          <a href="{{ node.properties.propose_talk }}" class="button btn-shadow" target="_blank">Propose a talk</a>
-        </div>
-      {% endif %}
+      <div class="col-sm-8 col-sm-offset-2 col-xs-12">
+        {% for topic in topics %}
+          <div class="col-xs-12 discussions">
+            <div class="icon-wrapper col-xs-12 col-md-4 {% if loop.index % 2 == 0 %} pull-right {% endif %}">
+              <img src="{{ topic.icon }}" alt="{{ topic.title }}" />
+            </div>
+            <div class="col-xs-12 col-md-8">
+              <h4 class="large text-center space-half-bottom nospace-top">{{ topic.title }}</h4>
+              <p class="regular">{{ topic.description|safe }}</p>
+            </div>
+          </div>
+        {% endfor %}
+        {% if node.properties.propose_talk %}
+          <div class="push-two-top text-center clearboth">
+            <a href="{{ node.properties.propose_talk }}" class="button btn-shadow" target="_blank">Propose a talk</a>
+          </div>
+        {% endif %}
+      </div>
     </div><!-- /row -->
   </div><!-- /container -->
 </section><!-- /about -->
