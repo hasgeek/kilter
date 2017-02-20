@@ -1,4 +1,45 @@
-{% extends theme('layouts/page.html') %}
+{% extends theme('layout.html') %}
+{% from "baseframe/forms.html" import ajaxform %}
+{% set event = node %}
+
+{% set title = node.title %}
+{% set description = node.description %}
+
+{% block networkbar %}
+  {{ networkbar(siteid='events', login=true) }}
+{% endblock %}
+
+{% block banner %}
+<header class="clearfix">
+  <div class="visible-xs">
+    <img src="{{ theme_static('img/mobile-banner.svg') }}" alt="Kilter" />
+  </div>
+  <div class="hidden-xs">
+    <img src="{{ theme_static('img/banner.svg') }}" alt="Kilter" />
+  </div>
+  <div class="container banner-text">
+    <div class="banner-logo">
+      <a href="/2017" class="link-silent"><img src="https://images.hasgeek.com/embed/file/eaaffeb43d0249b8b460388e4389df9c" alt="Kilter" /></a>
+    </div>
+    <h1 class="extra-huge logo-text nospace-top space-one-bottom"><a href="/2017" class="link-silent">Kilter</a></h1>
+    {% if node.properties.date %}
+      <h2 class="large nospace">{{ node.properties.date }}</h2>
+    {% endif %}
+    {% if node.properties.venue %}
+      <h2 class="large nospace">{{ node.properties.venue }}</h2>
+    {% endif %}
+    {% if node.properties.buy_ticket %}
+      <div class="push-two-top">
+        <a href="/#tickets" class="button smooth-scroll">Buy tickets</a>
+      </div>
+    {% elif node.properties.propose_talk %}
+      <div class="push-two-top">
+        <a href="{{ node.properties.propose_talk }}" class="button btn-shadow" target="_blank">Propose a talk</a>
+      </div>
+    {% endif %}
+  </div>
+</header>
+{% endblock %}
 
 {% block content %}
   {% include theme("sections/code-of-conduct-intro.html") %}
