@@ -2,7 +2,7 @@
 {% extends theme("layout.html") %}
 
 {% block banner %}
-<header class="clearfix">
+<header class="clearfix" id="header">
   <div class="visible-xs">
     <img src="{{ theme_static('img/mobile-banner.svg') }}" alt="Kilter" />
   </div>
@@ -33,6 +33,57 @@
 </header>
 {% endblock %}
 
+{% block navtype %}
+<div id="nav-home">
+  <nav class="navbar navbar-default" id="site-nav" role="navigation">
+    <div class="sitebar">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand smooth-scroll logo-text" href="#header">Kilter</a>
+      </div>
+
+      <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="#annoucements" class="smooth-scroll">Announcements</a></li>
+          {% if node.properties.theme %}
+            <li><a href="#discussions" class="smooth-scroll">Discussions</a></li>
+          {% endif %}
+          {% if node.properties.blog %}
+            <li><a href="#blog" class="smooth-scroll">Blog</a></li>
+          {% endif %}
+          {% if node.properties.runup_events_list %}
+            <li><a href="#runup-events" class="smooth-scroll">Runup events</a></li>
+          {% endif %}
+          {% if node.properties.proposals %}
+            <li><a href="#proposals" class="smooth-scroll">Proposals</a></li>
+          {% endif %}
+          {% if node.properties.schedule %}
+            <li><a href="#schedule" class="smooth-scroll">Schedule</a></li>
+          {% endif %}
+          {% if node.properties.tickets %}
+            <li><a href="#tickets" class="smooth-scroll">Tickets</a></li>
+          {% endif %}
+          <li><a href="#venue" class="smooth-scroll">Venue</a></li>
+          <li><a href="#sponsors" class="smooth-scroll">Sponsors</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
+            <ul class="dropdown-menu">   
+              <li><a href="#about" class="smooth-scroll">About HasGeek</a></li>
+              <li><a href="code-of-conduct">Code of conduct</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
+{% endblock %}
+
 {% block content %}
   {% include theme("sections/introduction.html") %}
   {% if node.properties.theme %}
@@ -43,6 +94,12 @@
   {% endif %}
   {% if node.properties.runup_events_list %}
     {% include theme("sections/runup-events-list.html") %}
+  {% endif %}
+  {% if node.properties.proposals %}
+    {% include theme("sections/proposals.html") %}
+  {% endif %}
+  {% if node.properties.schedule %}
+    {% include theme("sections/schedule.html") %}
   {% endif %}
   {% if node.properties.tickets %}
     {% include theme("sections/tickets.html") %}
@@ -94,47 +151,70 @@
 
 <script>
 $(document).ready(function() {  
-  var url = "{{ node.properties.blog }}"
-  var blog = [];
-  feednami.setPublicApiKey('27e9bf43bffd7b67277ff3639b85da428fac21bb4997f1964d4234c237c5e993');
-  feednami.load(url).then(feed => {
-    //Copy only six blog entries
-    var entries = feed.entries.slice(0, 6);
-    for(let entry of entries){
-      blog.push({"title": entry.title, "author":entry.author, "description": entry.description, "link": entry.link})
-    }
-    parseJson(blog, '#entries-wrapper', '#entries', 'blog');
-  });
-
   var boxofficeUrl = "https://boxoffice.hasgeek.com";
 
-  $.get({       
-    url: boxofficeUrl+"/api/1/boxoffice.js",    
-    crossDomain: true       
-  }).done(function(data) {        
-    var boxofficeScript = document.createElement('script');       
-    boxofficeScript.innerHTML = data.script;        
-    document.getElementsByTagName('body')[0].appendChild(boxofficeScript);        
-    window.Boxoffice.init({       
-      org: "hasgeek",       
-      itemCollection: "{{ node.properties.item_collection }}",     
-      paymentDesc: "{{ node.properties.payment_desc }}"       
-    });       
-  }).fail(function(response) {        
-    var error_msg;    
-    if (response.readyState === 4) {    
-      error_msg = "Server error, please try again later";   
-    }   
-    else if (response.readyState === 0) {   
-      if(!navigator.onLine) {   
-        error_msg = "Unable to connect. There is no network!";    
-      }   
-      else {    
-        error_msg = "<p>Unable to connect. If you are behind a firewall or using any script blocking extension (like Privacy Badger).<p></p> Please ensure your browser can load boxoffice.hasgeek.com, api.razorpay.com and checkout.razorpay.com</p>";    
-      }   
-    }   
-    $('#boxoffice-widget p').html(error_msg);   
+  $.get({
+    url: boxofficeUrl + "/api/1/boxoffice.js",   
+    crossDomain: true   
+  }).done(function(data) {     
+    var boxofficeScript = document.createElement('script');   
+    boxofficeScript.innerHTML = data.script;
+    document.getElementsByTagName('body')[0].appendChild(boxofficeScript);     
+    window.Boxoffice.init({   
+      org: "hasgeek",
+      itemCollection: "{{ node.properties.item_collection }}",  
+      paymentDesc: "{{ node.properties.payment_desc }}"
+    });
+    loadBlog();
+    loadProposals();
+  }).fail(function(response) {   
+    var error_msg;
+    if (response.readyState === 4) {
+      error_msg = "Server error, please try again later";
+    }
+    else if (response.readyState === 0) {
+      if(!navigator.onLine) {
+        error_msg = "Unable to connect. There is no network!";
+      }
+      else {
+        error_msg = "<p>Unable to connect. If you are behind a firewall or using any script blocking extension (like Privacy Badger).<p></p> Please ensure your browser can load boxoffice.hasgeek.com, api.razorpay.com and checkout.razorpay.com</p>";
+      }
+    }
+    $('#boxoffice-widget p').html(error_msg);
+    loadBlog();
+    loadProposals(); 
   }); 
+
+  var loadBlog = function () {
+    var url = "{{ node.properties.blog }}"
+    var blog = [];
+    feednami.setPublicApiKey('27e9bf43bffd7b67277ff3639b85da428fac21bb4997f1964d4234c237c5e993');
+    feednami.load(url).then(feed => {
+      //Copy only six blog entries
+      var entries = feed.entries.slice(0, 6);
+      for(let entry of entries){
+        blog.push({"title": entry.title, "author":entry.author, "description": entry.description, "link": entry.link})
+      }
+      Kilter.parseJson(blog, '#entries-wrapper', '#entries', 'blog');
+    });
+  };
+
+  var loadProposals = function () {
+    var proposals_url = "{{ node.properties.propose_talk }}" + 'json';
+
+    //If funnel-proposals divs is present on the page, then make the ajax call.
+    if(($('#funnel-proposals').length)) {
+      $.ajax({
+        type: 'GET',
+        dataType: 'jsonp',
+        url: proposals_url,
+        success: function(data) {
+          console.log("data", data);
+          Kilter.parseProposalJson(data);
+        }
+      });//eof ajax call
+    }
+  };
 
 });
 </script>

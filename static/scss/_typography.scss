@@ -5,18 +5,18 @@
 
 /*  Families  */
 
-body, .body-type { font-family: 'Josefin Sans', sans-serif; line-height: 24px; font-size: 18px;}
+body, .body-type { font-family: 'Alegreya Sans', sans-serif; line-height: 24px; font-size: 18px;}
 
 i, .button,
-.prose-type     { font-family: 'Josefin Sans', sans-serif }
+.prose-type     { font-family: 'Alegreya Sans', sans-serif; }
 
 .leaflet-container {
-    font-family: 'Josefin Sans', sans-serif !important;
+    font-family: 'Alegreya Sans', sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
   font-family: 'Josefin Sans', sans-serif;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 @font-face {
@@ -58,20 +58,18 @@ abbr {
     border-bottom: none;
 }
 
-.thin           { font-weight: 300;    }
-.calm           { font-weight: normal; }
+.thin           { font-weight: 300; }
+.calm           { font-weight: 400; }
 .medium         { font-weight: 500; }
-.semibold       { font-weight: 600;    }
-.bold           { font-weight: bold;   }
-.extrabold      { font-weight: 900;    }
-.italic         { font-style: italic;  }
-.no-italic      { font-style: normal;  }
+.bold           { font-weight: 700; }
+.italic         { font-style: italic; }
+.no-italic      { font-style: normal; }
 
-.all-caps       { text-transform: uppercase;    }
-.all-lower      { text-transform: lowercase !important;    }
-.small-caps     { font-variant: small-caps;     }
+.all-caps       { text-transform: uppercase; }
+.all-lower      { text-transform: lowercase !important; }
+.small-caps     { font-variant: small-caps; }
 .strike         { text-decoration: line-through;}
-.no-underline   { text-decoration: none;        }
+.no-underline   { text-decoration: none; }
 
 .unordered      { list-style-type: none; }
 

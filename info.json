@@ -14,9 +14,7 @@
             "css/main.css"
         ],
         "assets_js": [
-            "js/vendor/jquery-2.2.0.min.js",
             "js/vendor/bootstrap.min.js",
-            "js/vendor/modernizr-2.6.2.js",
             "js/vendor/jquery.mobile.custom.min.js",
             "js/vendor/jquery.mousewheel.js",
             "js/vendor/jquery.mCustomScrollbar.min.js",

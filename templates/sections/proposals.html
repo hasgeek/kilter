@@ -1,12 +1,16 @@
-<section id="proposals" class="push-three-top push-two-bottom clearfix">
-  <h2 class="calm centered space-one large text-center">Proposals</h2>
+<section id="proposals" class="push-four section-divider clearfix">
+  <div class="container">
+    <div class="row">
+      <h3 class="huge text-center col-xs-12">Proposals</h3>
+    </div>
+  </div>
   <div id="funnel-proposals">
     <p class="text-center secondary">Loading...</p>
     {%raw%}
     <script id="proposals-wrapper" type="text/ractive">
       <div class="proposals">
       <div class="mCustomScrollbar" data-mcs-theme="dark">
-        {{#content}}
+        {{#proposals}}
           <div class="proposal-card click" data-toggle="modal" data-target="#{{id}}" data-label="Funnel proposal card">
             <div class="talk">
               <p class="title"><span>{{title}}</span></p>
@@ -20,7 +24,7 @@
         {{/}}
       </div>
       </div>
-      {{#content}}
+      {{#proposals}}
       <div class="modal fade" id="{{id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
