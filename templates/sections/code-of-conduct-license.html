@@ -1,10 +1,10 @@
-<section class="push-two clearfix">
+<section class="push-four clearfix section-divider">
   <div class="container"> 
     <div class="row">
-      <div class="regular space-one-top">
+      <div class="col-xs-12">
         {% with f = fragment('2017', 'code-of-conduct-license') %}
-          <h3 class="text-center push-1q-bottom large all-caps">{{ f.title }}</h3>
-          {{ f.content }}
+          <h3 class="huge text-center">{{ f.title }}</h3>
+          <div class="regular">{{ f.content }}</div>
         {% endwith %}
       </div>
     </div>
