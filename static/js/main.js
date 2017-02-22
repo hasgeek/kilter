@@ -7,7 +7,6 @@ Kilter.sendGA = function (category, action, label) {
 };
 
 Kilter.updateFontSize = function (elem) {
-  console.log("elem", elem);
   var fontStep = 1;
   var parentWidth = $(elem).width();
   var parentHeight = parseInt($(elem).css('max-height'), 10);
@@ -115,6 +114,3 @@ $(document).ready(function() {
   });
 
 });
-
-
-

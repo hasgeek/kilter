@@ -192,8 +192,11 @@ $(document).ready(function() {
     feednami.load(url).then(feed => {
       //Copy only six blog entries
       var entries = feed.entries.slice(0, 6);
-      for(let entry of entries){
-        blog.push({"title": entry.title, "author":entry.author, "description": entry.description, "link": entry.link})
+      for(let entry of entries) {
+        //Remove img and iframe    
+        var description = entry.description.replace(/<img[^>]*>/g,"");
+        description = description.replace(/<iframe[^>]*>/g,"");
+        blog.push({"title": entry.title, "author":entry.author, "description": description, "link": entry.link})
       }
       Kilter.parseJson(blog, '#entries-wrapper', '#entries', 'blog');
     });
@@ -209,7 +212,6 @@ $(document).ready(function() {
         dataType: 'jsonp',
         url: proposals_url,
         success: function(data) {
-          console.log("data", data);
           Kilter.parseProposalJson(data);
         }
       });//eof ajax call

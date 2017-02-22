@@ -28,7 +28,7 @@ hr{
 .prose.prose-type a { border-bottom: none; text-decoration: underline; }
 
 button, .button {
-  background-color: #e15d36;
+  background-color: $kilterorangered;
   padding: 12px;
   color: #fff;
   font-size: 18px;
@@ -75,6 +75,7 @@ button:focus,
 .kilterorange  { color: $kilterorange; }
 .kilteryellow { color: $kilteryellow; }
 .kiltergreen { color: $kiltergreen; }
+.kilterorangered { color: $kilterorangered; }
 
 .fill-kilterlightblue { background-color: $kilterlightblue; }
 .fill-kiltergreen { background-color: $kiltergreen; }

@@ -18,9 +18,22 @@ header {
   z-index: 4;
 }
 
-.banner-logo {
+.innerpage-banner-text {
+  color: #333;
+  margin: 15px auto;
+  text-align: center;
+}
+
+.banner-text .banner-logo img{
   clear: both;
   width: 50px;
+  height: 77px;
+}
+
+.innerpage-banner-text .banner-logo img{
+  width: 40px;
+  height: 62px;
+  margin: auto
 }
 
 .logo-text {
@@ -28,12 +41,17 @@ header {
   font-weight: 400;
 }
 
+.event-text {
+  margin: 15px auto;
+}
+
 @media (min-width: 480px) {
   .banner-text {
     top: 20vh;
   }
-  .banner-logo {
+  .banner-text .banner-logo img {
     width: 65px;
+    height: 100px;
   }
 }
 
@@ -44,6 +62,21 @@ header {
     right: 0;
     top: 20px;
     z-index: 4;
+  }
+  .innerpage-banner-text {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50px;
+    z-index: 4;
+    margin: 0 auto;
+    text-align: left;
+  }
+  .innerpage-banner-text .banner-logo {
+    margin: 0;
+  }
+  .event-text {
+    margin: 50px auto;
   }
 }
 
@@ -57,9 +90,9 @@ header {
   .banner-text {
     top: 90px;
   }
-  .banner-logo {
-    clear: both;
+  .banner-text .banner-logo img {
     width: 80px;
+    height: 124px;
   }
 }
 
