@@ -1,9 +1,5 @@
-{% extends theme('layout.html') %}
-{% from "baseframe/forms.html" import ajaxform %}
+{% extends theme("pages/layout.html") %}
 {% set event = node %}
-
-{% set title = node.title %}
-{% set description = node.description %}
 
 {% block networkbar %}
   {{ networkbar(siteid='events', login=true) }}

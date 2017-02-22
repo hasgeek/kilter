@@ -1,5 +1,4 @@
-{% from "baseframe/components.html" import networkbar with context -%}
-{% extends theme("layout.html") %}
+{% extends theme("pages/layout.html") %}
 
 {% block banner %}
 <header class="clearfix" id="header">
@@ -168,7 +167,7 @@ $(document).ready(function() {
     loadBlog();
     loadProposals();
   }).fail(function(response) {   
-    var error_msg;
+    var error_msg = "Unable to load tickets. Please write to us at support@hasgeek.com";
     if (response.readyState === 4) {
       error_msg = "Server error, please try again later";
     }
@@ -181,6 +180,7 @@ $(document).ready(function() {
       }
     }
     $('#boxoffice-widget p').html(error_msg);
+    Kilter.sendGA('error', 'boxoffice load error', error_msg);
     loadBlog();
     loadProposals(); 
   }); 
