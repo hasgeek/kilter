@@ -1,6 +1,46 @@
 {% extends theme("pages/layout.html") %}
 
+{% block banner %}
+<header class="clearfix" id="header">
+  <div class="visible-xs">
+    <img src="{{ theme_static('img/mobile-banner.svg') }}" alt="Kilter" />
+  </div>
+  <div class="hidden-xs">
+    <img src="{{ theme_static('img/banner.svg') }}" alt="Kilter" />
+  </div>
+  <div class="container banner-text">
+    <div class="banner-logo">
+      <img src="https://images.hasgeek.com/embed/file/eaaffeb43d0249b8b460388e4389df9c" alt="Kilter" />
+    </div>
+    <h1 class="extra-huge logo-text nospace-top space-one-bottom"><a href="/2017" class="link-silent">Kilter</a></h1>
+    {% if node.properties.date %}
+      <h2 class="large nospace">{{ node.properties.date }}</h2>
+    {% endif %}
+    {% if node.properties.venue %}
+      <h2 class="large nospace">{{ node.properties.venue }}</h2>
+    {% endif %}
+    {% if node.properties.buy_ticket %}
+      <div class="push-two-top">
+        <a href="#tickets" class="button smooth-scroll">Buy tickets</a>
+      </div>
+    {% elif node.properties.propose_talk %}
+      <div class="push-two-top">
+        <a href="{{ node.properties.propose_talk }}" class="button btn-shadow" target="_blank">Propose a talk</a>
+      </div>
+    {% endif %}
+  </div>
+</header>
+{% endblock %}
+
 {% block content %}
   {% include theme("sections/sponsors.html") %}
   {% include theme("sections/venue.html") %}
+{% endblock %}
+
+{% block footerscripts %}
+<script>
+  $(document).ready(function() {
+    initLeaflets();
+  });
+</script>
 {% endblock %}

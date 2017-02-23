@@ -4,7 +4,7 @@
   </div>
 </section>
 
-{% with fill_cycler = cycler('fill-blue', 'fill-gray') %}
+{% with fill_cycler = cycler('fill-white', 'fill-kilterblue') %}
   {% set types = getnode(path='2017-sponsors-type').data['types'] %}
   {% set items = getnode(path='2017-sponsors').data['sponsors'] %}
   {% for type in types %}
@@ -28,20 +28,20 @@
             
             {% if item.attendee %}
             <h4 class="tiny all-caps nospace faded">Sponsor Attendee</h3>
-            <p class="regular prose-type space-half-top space-one-bottom link-silent">{{ item.attendee|safe }}</p>
+            <p class="regular space-half-top space-one-bottom link-silent">{{ item.attendee|safe }}</p>
             {% endif %}
             
             {% if item.contact %}
             <h4 class="tiny all-caps nospace faded">Contact</h3>
-            <p class="regular prose-type space-half-top space-one-bottom link-silent">{{ item.contact|safe }}</p>
+            <p class="regular space-half-top space-one-bottom link-silent">{{ item.contact|safe }}</p>
             {% endif %}
             
           </div>
-          <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12 regular-prose prose prose-type space-three-bottom">
-            <div class="legible space-half-bottom"><a href="{{ item.link }}" target="_blank">{{ item.title }}</a></div>
-              {% with f = fragment('2017', item.blurb) %}
-                {{ f.content }}
-              {% endwith %}
+          <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12 space-three-bottom">
+            <div class="legible space-half-bottom">
+              <p class="nospace-top space-one-bottom"><a href="{{ item.link }}" target="_blank" class="large">{{ item.title }}</a></p>
+              {{ item.blurb|safe }}
+            </div>
           </div>
         </div>
       {% if loop.last %}

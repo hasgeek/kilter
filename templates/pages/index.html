@@ -169,6 +169,7 @@ $(document).ready(function() {
       });
       loadBlog();
       loadProposals();
+      initLeaflets();
     },
     error: function(response) {
       var ajaxLoad = this;
@@ -202,6 +203,7 @@ $(document).ready(function() {
     Kilter.sendGA('error', 'boxoffice load error', errorMsg);
     loadBlog();
     loadProposals();
+    initLeaflets();
   }
 
   var loadBlog = function () {

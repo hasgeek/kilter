@@ -77,8 +77,6 @@ Kilter.parseProposalJson = function(json) {
 
 $(document).ready(function() {
 
-  initLeaflets();
-
   if ($("#nav-home").length) {
     var siteNavTop = $("#nav-home").offset().top;
   }

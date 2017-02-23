@@ -712,3 +712,45 @@ body.modal-open, .modal-open .navbar-fixed-top, .modal-open .navbar-fixed-bottom
   margin-right: 0!important;
 }
 
+
+.sponsor-m > li {
+    float: left !important;
+    width: 48.5% !important;
+    margin-left: 3%;
+}
+.sponsor-m > li:nth-child(odd) { margin-left: 0; }
+
+.sponsor-s > li {
+    float: left !important;
+    width: 32% !important;
+    margin-left: 2%;
+}
+.sponsor-s > li:nth-child(3n+1) { margin-left: 0; }
+
+.sponsor-compact { border-radius: 0.25em; }
+.sponsor-compact > li {
+    float: left !important;
+    margin-bottom: 0 !important;
+    width: 33.3333% !important;
+    margin-top: 1.3em;
+}
+.sponsor-compact > li:nth-child(3n+1) { margin-left: 0; }
+
+.sponsorlogo       { text-align: center; border-radius: 0.25em; height: 5.34em; line-height: 4.5em; padding: 0.3em 0.5em 0.5em 0.5em; background-color: white;}
+.sponsorlogo:hover { background-color: #E5E5E5 !important; border: 0;}
+.sponsorlogo img   { max-height: 100%; max-width: 100%; }
+.sponsorlogo, .link-silent a.sponsor-logo {
+    margin: auto 20px 0 0px;
+    display: inline-block;
+    width: 100%;
+}
+
+.sponsor-xl       .sponsorlogo { height: 6.67em;  line-height: 4em;    padding: 1.34em; }
+.sponsor-l        .sponsorlogo { height: 5.34em;  line-height: 3.35em; padding: .84em;  }
+.sponsor-m        .sponsorlogo { height: 5.34em;  line-height: 4.5em; padding: 0.34em 0.5em; }
+.sponsor-s        .sponsorlogo { height: 4em;     line-height: 2em;    padding: .84em;  }
+.sponsor-compact  .sponsorlogo { height: 4em;     line-height: 2em;    padding: .84em;  }
+
+.sponsor-xl .sponsorlogo.contain-width { padding: 1.34em 3em; }
+.sponsor-l  .sponsorlogo.contain-width { padding: .84em 4em;  }
+
