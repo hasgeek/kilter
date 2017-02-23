@@ -156,7 +156,7 @@ $(document).ready(function() {
     url: boxofficeUrl + "/api/1/boxoffice.js",   
     crossDomain: true,
     timeout: 8000,
-    retries: 1,
+    retries: 5,
     retryInterval: 8000,
     success: function(data) {
       var boxofficeScript = document.createElement('script');
