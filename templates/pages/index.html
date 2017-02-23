@@ -156,7 +156,7 @@ $(document).ready(function() {
     url: boxofficeUrl + "/api/1/boxoffice.js",   
     crossDomain: true,
     timeout: 8000,
-    retries: 5,
+    retries: 1,
     retryInterval: 8000,
     success: function(data) {
       var boxofficeScript = document.createElement('script');
@@ -212,8 +212,9 @@ $(document).ready(function() {
     feednami.setPublicApiKey('27e9bf43bffd7b67277ff3639b85da428fac21bb4997f1964d4234c237c5e993');
     feednami.load(url).then(function(feed) {
       //Copy only six blog entries
-      for(var index; index < 6; index++) {
-        entry = feed.entries[index];
+      var entries = feed.entries.slice(0, 6);
+      for(var index in entries) {
+        entry = entries[index];
         //Remove img and iframe    
         var description = entry.description.replace(/<img[^>]*>/g,"");
         description = description.replace(/<iframe[^>]*>/g,"");

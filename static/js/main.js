@@ -35,7 +35,7 @@ Kilter.parseJson = function (data, wrapper, div, type) {
     data: {
       content: data
     },
-    complete: function () {
+    oncomplete: function () {
       var clickElem = wrapper + " .click";
 
       $(clickElem).click(function(event) {
@@ -54,7 +54,7 @@ Kilter.parseProposalJson = function(json) {
     data: {
       proposals: json.proposals
     },
-    complete: function() {
+    oncomplete: function() {
       $.each($('.proposal-card .title'), function(index, title) {
         Kilter.updateFontSize(title);
       });
