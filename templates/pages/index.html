@@ -206,7 +206,10 @@ $(document).ready(function() {
         id: "{{ g.user.username }}"
       });
     {% endif %}
-    Raven.captureException(errorMsg)
+    Raven.captureMessage(errorMsg, {
+      level: 'error',
+      logger: 'boxoffice'
+    });
     Kilter.sendGA('error', 'boxoffice load error', errorMsg);
     loadBlog();
     loadProposals();

@@ -10,7 +10,8 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="{{ node.description }}">
 <meta name="author" content="HasGeek and friends">
-<meta name="keywords" content="Conference"> 
+<meta name="keywords" content="Conference">
+<meta name="referrer" content="origin">
 
 <meta property="og:title" content="{{ node.title }}"/>
 <meta property="og:image" content="{{ node.properties.image }}"/>
@@ -117,8 +118,7 @@
 <script src="https://cdn.ravenjs.com/3.11.0/raven.min.js"></script>
 <script>Raven.config('https://3d19a9eb41214af1a0b7bd66a9722166@sentry.io/141526', {
   environment: 'production',
-  tags: {event_edition: 'Kilter 2017'},
-  ignoreUrls: [/.dev/]
+  tags: {event_edition: '{{ node.title }}', item_collection: "{{ node.properties.item_collection }}"}
 }).install()</script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/leaflet/0.6.3/leaflet.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/mustache.js/2.1.3/mustache.min.js"></script>
