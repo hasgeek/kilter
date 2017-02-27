@@ -156,7 +156,7 @@ $(document).ready(function() {
     url: boxofficeUrl + "/api/1/boxoffice.js",   
     crossDomain: true,
     timeout: 8000,
-    retries: 5,
+    retries: 1,
     retryInterval: 8000,
     success: function(data) {
       var boxofficeScript = document.createElement('script');
@@ -186,7 +186,7 @@ $(document).ready(function() {
             logError(errorMsg);
           }
           else {
-            errorMsg = "<p>Unable to connect. If you are behind a firewall or using any script blocking extension (like Privacy Badger).<p></p> Please ensure your browser can load boxoffice.hasgeek.com, api.razorpay.com and checkout.razorpay.com .</p>";
+            errorMsg = "Unable to connect. If you are behind a firewall or using any script blocking extension (like Privacy Badger). Please ensure your browser can load boxoffice.hasgeek.com, api.razorpay.com and checkout.razorpay.com .";
             logError(errorMsg);
           }
         } else {
@@ -200,6 +200,13 @@ $(document).ready(function() {
 
   var logError = function (errorMsg) {
     $('#boxoffice-widget p').html(errorMsg);
+    {% if g.user %}
+      Raven.setUserContext({
+        email: "{{ g.user.email }}",
+        id: "{{ g.user.username }}"
+      });
+    {% endif %}
+    Raven.captureException(errorMsg)
     Kilter.sendGA('error', 'boxoffice load error', errorMsg);
     loadBlog();
     loadProposals();
