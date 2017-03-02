@@ -223,21 +223,23 @@ $(document).ready(function() {
   }
 
   var loadBlog = function () {
-    var url = "{{ node.properties.blog }}"
+    var url = "{{ node.properties.blog_feed }}"
     var blog = [];
-    feednami.setPublicApiKey('27e9bf43bffd7b67277ff3639b85da428fac21bb4997f1964d4234c237c5e993');
-    feednami.load(url).then(function(feed) {
-      //Copy only six blog entries
-      var entries = feed.entries.slice(0, 6);
-      for(var index in entries) {
-        entry = entries[index];
-        //Remove img and iframe    
-        var description = entry.description.replace(/<img[^>]*>/g,"");
-        description = description.replace(/<iframe[^>]*>/g,"");
-        blog.push({"title": entry.title, "author":entry.author, "description": description, "link": entry.link})
-      }
-      Kilter.parseJson(blog, '#entries-wrapper', '#entries', 'blog');
-    });
+    if (url) {    
+      feednami.setPublicApiKey('27e9bf43bffd7b67277ff3639b85da428fac21bb4997f1964d4234c237c5e993');
+      feednami.load(url).then(function(feed) {
+        //Copy only six blog entries
+        var entries = feed.entries.slice(0, 6);
+        for(var index in entries) {
+          entry = entries[index];
+          //Remove img and iframe    
+          var description = entry.description.replace(/<img[^>]*>/g,"");
+          description = description.replace(/<iframe[^>]*>/g,"");
+          blog.push({"title": entry.title, "author":entry.author, "description": description, "link": entry.link})
+        }
+        Kilter.parseJson(blog, '#entries-wrapper', '#entries', 'blog');
+      });
+    }
   };
 
   var loadProposals = function () {
