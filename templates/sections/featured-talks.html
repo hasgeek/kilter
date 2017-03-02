@@ -1,28 +1,22 @@
-<section id="featured-talks" class="push-four clearfix">
-  <div class="container-fluid">
+<section id="featured-talks" class="push-four section-divider clearfix">
+  <div class="container">
     <div class="row">
-      <h3 class="huge col-xs-12">Featured talks</h3>
+      <h3 class="huge col-xs-12 text-center">Featured talks</h3>
     </div>
     <div class="row">
-      <div class="col-xs-12">
-        <ul class="space-half-top list-plain list-silent row">
-        {% for item in getnode(path='featured-talks').data['talks'] %}
-          <li class="col-md-3 col-sm-4 col-xs-12 text-center speaker-list">
-            <div>
-              <img class="speaker-image" src="{{ item.photo }}" alt="{{ item.speaker }}">
-            </div>
-            <div>
-              {% if item.title %} <h5 class="space-1q-top nospace-bottom link-silent"><a target="_blank" class="regular kilterorange" {% if item.funnel %} href="{{ item.funnel }}" {% endif %}>{{ item.title }}</a></h5>{% endif %}
-              <h2 class="regular bold nospace">{{ item.speaker }}</h2>
-              {% if item.twitter %}<h5 class="regular nospace twitter-blue"><a href="https://twitter.com/{{ item.twitter }}" target="_blank">@{{ item.twitter }}</a></h5>{% endif %}
-              {% if item.designation %}<h5 class="regular nospace blue">{{ item.designation|safe }}</h5>{% endif %}
-              {% if item.place %}<h5 class="regular nospace">{{ item.place }}</h5>{% endif %}
-              {% if item.sponsor %}<h5 class="regular nospace">Sponsored by <a target="_blank" href="{{ item.sponsor_link }}">{{ item.sponsor }}</a></h5>{% endif %}
-            </div>           
-          </li>
-        {%- endfor %}
-        </ul>
+      <div class="col-sm-8 col-sm-offset-2 col-xs-12">
+      {% for item in getnode(path='featured-talks').data['talks'] %}
+        <div class="card col-xs-6">
+          <a href="{{item.url}}" class="banner-wrapper" target="_blank" data-target="{{item.url}}" data-label="{{ item.title }}"><img src="{{ item.banner}}" class="banner"/></a>
+          <div class="pad-half push-one-bottom">
+            <h3 class="space-one-top nospace-bottom regular text-center">{{ item.title }}</h3>
+            <p class="space-half-top nospace-bottom text-center kilter-redorange">{{ item.speaker }}</p>
+            <div class="space-half-top nospace-bottom regular pad-one">{{ item.description|safe }}</div>
+            <p class="space-half-top nospace-bottom text-center secondary bold">{{ item.type }}</p>
+          </div>
+        </div>
+      {%- endfor %}
       </div>
-    </div>    
+    </div>  
 </div>
 </section>

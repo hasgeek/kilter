@@ -4,21 +4,23 @@
   <div class="container">
     <div class="row">
       <h3 class="huge text-center col-xs-12">{{ getnode(path='runup-events-list').title }}</h3>
-      <div class="col-sm-8 col-sm-offset-2 col-xs-12">
+      <div class="col-xs-12">
         {% for event in events  %}
-          <div class="runup-event-box {% if event.featured %}featured{% endif %}">
-            {% if event.video_url %}
-              <a href="{{event.video_url}}" class="video-link click" target="_blank" data-target="{{event.video_url}}" data-label="Runup event video"><i class="fa fa-play-circle-o"></i><img src={{ event.banner}} class="banner"/></a>
-            {% else %}
-              <a href="{{event.url}}" data-target="{{event.url}}" data-label="{{ event.title }}" class="banner-wrapper" target="_blank"><img src="{{ event.banner}}" class="banner"/></a>
-            {% endif %}
-            <div class="pad-half push-one-bottom">
-              <h3 class="space-one-top nospace-bottom event-title regular">{{ event.title }}</h3>
-              <p class="space-half-top nospace-bottom event-speaker">{{ event.speaker }}</p>
+          <div class="runup-event-box">
+            <div class="runup-banner">
+              {% if event.video_url %}
+                <a href="{{event.video_url}}" class="video-link click" target="_blank" data-target="{{event.video_url}}" data-label="Runup event video"><i class="fa fa-play-circle-o"></i><img src="{{ event.banner}}" class="banner"/></a>
+              {% else %}
+                <a href="{{event.url}}" data-target="{{event.url}}" data-label="{{ event.title }}" class="banner-wrapper" target="_blank"><img src="{{ event.banner}}" class="banner"/></a>
+              {% endif %}
+            </div>
+            <div class="pad-half push-two runup-content">
+              <h3 class="space-one-top nospace-bottom event-title large">{{ event.title }}</h3>
+              <p class="space-half-top nospace-bottom regular">{{ event.speaker }}</p>
               {%if event.date %}<p class="space-half-top nospace-bottom secondary"><i class="fa fa-calendar"></i> {{ event.date }}</p>{% endif %}
               {%if event.time %}<p class="space-half-top nospace-bottom secondary"><i class="fa fa-clock-o"></i> {{ event.time }}</p>{% endif %}
               <p class="space-half-top nospace-bottom secondary"><i class="fa fa-map-marker"></i> {{ event.venue|safe }}</p>
-              {% if event.featured %}<a href="{{event.url}}" class="button space-one" data-target="{{event.url}}" data-label="{{ event.title }}">Interested</a>{% endif %}
+              {% if event.url %}<a href="{{event.url}}" class="button space-one" data-target="{{event.url}}" data-label="{{ event.title }}" target="_blank">Interested</a>{% endif %}
             </div>
           </div>
         {% endfor %}

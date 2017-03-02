@@ -61,6 +61,9 @@
           {% if node.properties.proposals %}
             <li><a href="#proposals" class="smooth-scroll">Proposals</a></li>
           {% endif %}
+          {% if node.properties.featured_talks %}
+            <li><a href="#featured-talks" class="smooth-scroll">Featured talks</a></li>
+          {% endif %}
           {% if node.properties.schedule %}
             <li><a href="#schedule" class="smooth-scroll">Schedule</a></li>
           {% endif %}
@@ -96,6 +99,9 @@
   {% endif %}
   {% if node.properties.proposals %}
     {% include theme("sections/proposals.html") %}
+  {% endif %}
+  {% if node.properties.featured_talks %}
+    {% include theme("sections/featured-talks.html") %}
   {% endif %}
   {% if node.properties.schedule %}
     {% include theme("sections/schedule.html") %}
@@ -237,8 +243,8 @@ $(document).ready(function() {
   var loadProposals = function () {
     var proposals_url = "{{ node.properties.propose_talk }}" + 'json';
 
-    //If funnel-proposals divs is present on the page, then make the ajax call.
-    if(($('#funnel-proposals').length)) {
+    // If funnel-proposals divs is present on the page, then make the ajax call.
+    if(($('#funnel-proposals').length) && proposals_url) {
       $.ajax({
         type: 'GET',
         dataType: 'jsonp',

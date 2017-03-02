@@ -271,7 +271,6 @@ header {
   position: relative;
   cursor: pointer;
   border: none;
-  width: 100%;
 }
 
 @media (min-width: 1200px) {
@@ -481,35 +480,40 @@ a.hasgeek-logo:hover { background-color: rgba(255,255,255,0.15); }
 }
 
 .runup-event-box {
-  width: 70%;
+  width: 90%;
   margin: 20px auto;
   box-shadow: 0 0 2px rgba(0,0,0,0.6);
   text-align: center;
+  max-height: 253px;
+  overflow: hidden;
+}
+
+.runup-banner,
+.runup-content {
+  width: 50%;
+  display: inline-block;
+  float: left;
 }
 
 @media (min-width: 768px) {
   .runup-event-box {
-    display: inline-block;
     vertical-align: top;
-    width: 45%;
-    margin: 20px 2.35%;
-    min-height: 340px;
-  }
-  .runup-event-box.featured {
-    width: 47.3%;
-    margin: 1% 1.2% 2%;
+    width: 70%;
+    margin: 20px auto;
+    max-height: 328px;
   }
 }
 
 @media (min-width: 1200px) {
   .runup-event-box {
-    width: 30.6%;
-    margin: 1.2%;
+    display: inline-block;
+    width: 47.3%;
+    margin: 1% 1.2% 2%;
+    max-height: 269px;
   }
 }
 
 .banner-wrapper {
-  max-height: 189px;
   overflow: hidden;
   display: block;
 }
