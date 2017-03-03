@@ -4,15 +4,17 @@
       <h3 class="huge col-xs-12 text-center">Featured talks</h3>
     </div>
     <div class="row">
-      <div class="col-sm-8 col-sm-offset-2 col-xs-12">
+      <div class="col-xs-12">
       {% for item in getnode(path='featured-talks').data['talks'] %}
-        <div class="card col-xs-6">
-          <a href="{{item.url}}" class="banner-wrapper" target="_blank" data-target="{{item.url}}" data-label="{{ item.title }}"><img src="{{ item.banner}}" class="banner"/></a>
-          <div class="pad-half push-one-bottom">
-            <h3 class="space-one-top nospace-bottom regular text-center">{{ item.title }}</h3>
-            <p class="space-half-top nospace-bottom text-center kilter-redorange">{{ item.speaker }}</p>
-            <div class="space-half-top nospace-bottom regular pad-one">{{ item.description|safe }}</div>
-            <p class="space-half-top nospace-bottom text-center secondary bold">{{ item.type }}</p>
+        <div class="col-xs-4">
+          <div class="card">
+            <a href="{{item.url}}" class="banner-wrapper" target="_blank" data-target="{{item.url}}" data-label="{{ item.title }}"><img src="{{ item.banner}}" class="banner"/></a>
+            <div class="pad-half push-one-bottom">
+              <h3 class="space-one-top nospace-bottom regular text-center">{{ item.title }}</h3>
+              <p class="space-half-top nospace-bottom text-center kilter-redorange">{{ item.speaker }}</p>
+              <div class="space-half-top nospace-bottom regular pad-one">{{ item.description|safe }}</div>
+              <p class="space-half-top nospace-bottom text-center secondary bold">{{ item.type }}</p>
+            </div>
           </div>
         </div>
       {%- endfor %}
