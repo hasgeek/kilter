@@ -48,11 +48,14 @@ Kilter.parseJson = function (data, wrapper, div, type) {
 };
 
 Kilter.parseProposalJson = function(json) {
+  var confirmedProposals = json.proposals.filter(function(proposal) {
+    return proposal.status == 2;
+  });
   var proposal_ractive = new Ractive({
     el: '#funnel-proposals',
     template: '#proposals-wrapper',
     data: {
-      proposals: json.proposals
+      proposals: confirmedProposals,
     },
     oncomplete: function() {
       $.each($('.proposal-card .title'), function(index, title) {
@@ -60,10 +63,10 @@ Kilter.parseProposalJson = function(json) {
       });
 
       //Set width of content div to enable horizontal scrolling
-      Kilter.enableScroll(json.proposals.length, ".proposal-card");
+      Kilter.enableScroll(confirmedProposals.length, ".proposal-card");
 
       $(window).resize(function() {
-        Kilter.enableScroll(json.proposals.length, ".proposal-card");
+        Kilter.enableScroll(confirmedProposals.length, ".proposal-card");
       });
 
       $('#funnel-proposals .click, #funnel-proposals .btn').click(function(event) {
