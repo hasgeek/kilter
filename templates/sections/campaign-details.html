@@ -1,0 +1,13 @@
+<section id="campaign-details" class="section push-four">
+  <div class="container">
+    <div class="row">
+      {% set faq = getnode(path='details-of-21-day-challenge').data['faq'] %}
+      {% for qa in faq %}
+          <h3>{{ qa.q|safe }}</h3>
+          <div class="col-xs-12 clearfix space-two-bottom space-one-top">
+            <div class="regular">{{ qa.a|safe }}</div>
+          </div>
+      {% endfor %}
+    </div><!-- /row -->
+  </div><!-- /container -->
+</section><!-- /about -->

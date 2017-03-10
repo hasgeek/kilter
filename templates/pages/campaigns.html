@@ -1,0 +1,38 @@
+{% from "baseframe/forms.html" import ajaxform %}
+{% extends theme("pages/layout.html") %}
+{% set page = node %}
+
+{% block networkbar %}
+  {{ networkbar(siteid='events', login=true) }}
+{% endblock %}
+
+{% block banner %}
+<header class="clearfix" id="header">
+  <div class="visible-xs">
+    <img src="{{ theme_static('img/mobile-banner.svg') }}" alt="Kilter" />
+  </div>
+  <div class="hidden-xs">
+    <img src="{{ theme_static('img/banner.svg') }}" alt="Kilter" />
+  </div>
+  <div class="container banner-text">
+    <div class="banner-logo">
+      <img src="https://images.hasgeek.com/embed/file/eaaffeb43d0249b8b460388e4389df9c" alt="Kilter" />
+    </div>
+    <h1 class="extra-huge logo-text nospace-top space-one-bottom"><a href="/2017" class="link-silent">21 Day Challenge</a></h1>
+  </div>
+</header>
+{% endblock %}
+
+
+{% block content %}
+
+  {% include theme("sections/campaign-intro.html") %}
+  {% include theme("sections/campaign-details.html") %}
+  {% include theme("sections/campaign-subscribe.html") %}
+
+
+{% endblock %}
+
+{% block footerscripts %}
+
+{% endblock %}
