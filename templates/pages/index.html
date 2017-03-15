@@ -52,23 +52,23 @@
           {% if node.properties.theme %}
             <li><a href="#discussions" class="smooth-scroll">Discussions</a></li>
           {% endif %}
-          {% if node.properties.blog %}
-            <li><a href="#blog" class="smooth-scroll">Blog</a></li>
-          {% endif %}
-          {% if node.properties.runup_events_list %}
-            <li><a href="#runup-events" class="smooth-scroll">Runup events</a></li>
-          {% endif %}
           {% if node.properties.proposals %}
             <li><a href="#proposals" class="smooth-scroll">Confirmed talks</a></li>
           {% endif %}
-          {% if node.properties.featured_talks %}
-            <li><a href="#featured-talks" class="smooth-scroll">Featured talks</a></li>
+          {% if node.properties.workshops %}
+            <li><a href="#workshops" class="smooth-scroll">Workshops</a></li>
           {% endif %}
           {% if node.properties.schedule %}
             <li><a href="#schedule" class="smooth-scroll">Schedule</a></li>
           {% endif %}
           {% if node.properties.tickets %}
             <li><a href="#tickets" class="smooth-scroll">Tickets</a></li>
+          {% endif %}
+          {% if node.properties.blog %}
+            <li><a href="#blog" class="smooth-scroll">Blog</a></li>
+          {% endif %}
+          {% if node.properties.runup_events_list %}
+            <li><a href="#runup-events" class="smooth-scroll">Runup events</a></li>
           {% endif %}
           <li><a href="#venue" class="smooth-scroll">Venue</a></li>
           <li><a href="#sponsors" class="smooth-scroll">Sponsors</a></li>
@@ -91,23 +91,23 @@
   {% if node.properties.theme %}
     {% include theme("sections/theme.html") %}
   {% endif %}
-  {% if node.properties.blog %}
-    {% include theme("sections/blog.html") %}
-  {% endif %}
-  {% if node.properties.runup_events_list %}
-    {% include theme("sections/runup-events-list.html") %}
-  {% endif %}
   {% if node.properties.proposals %}
     {% include theme("sections/proposals.html") %}
   {% endif %}
-  {% if node.properties.featured_talks %}
-    {% include theme("sections/featured-talks.html") %}
+  {% if node.properties.workshops %}
+    {% include theme("sections/workshops.html") %}
   {% endif %}
   {% if node.properties.schedule %}
     {% include theme("sections/schedule.html") %}
   {% endif %}
   {% if node.properties.tickets %}
     {% include theme("sections/tickets.html") %}
+  {% endif %}
+  {% if node.properties.blog %}
+    {% include theme("sections/blog.html") %}
+  {% endif %}
+  {% if node.properties.runup_events_list %}
+    {% include theme("sections/runup-events-list.html") %}
   {% endif %}
   {% include theme("sections/venue.html") %}
   {% include theme("sections/sponsors-summary.html") %}
