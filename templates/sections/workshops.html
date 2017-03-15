@@ -1,11 +1,11 @@
 <section id="workshops" class="push-four section-divider clearfix">
   <div class="container">
     <div class="row">
-      <h3 class="huge col-xs-12 text-center">Featured talks</h3>
+      <h3 class="huge col-xs-12 text-center">Workshops</h3>
     </div>
     <div class="row">
       <div class="col-xs-12">
-      {% for item in getnode(path='featured-talks').data['talks'] %}
+      {% for item in getnode(path='workshops').data['talks'] %}
         <div class="col-xs-4">
           <div class="card">
             <a href="{{item.url}}" class="banner-wrapper" target="_blank" data-target="{{item.url}}" data-label="{{ item.title }}"><img src="{{ item.banner}}" class="banner"/></a>
