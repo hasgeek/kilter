@@ -969,7 +969,7 @@ header {
   background-color: transparent;
 }
 
-@media screen and (min-width: 768px) and (max-width: 991px) {
+@media (min-width: 768px) and (max-width: 1200px) {
   .navbar .nav > li > a, .navbar-default .navbar-brand, .navbar .dropdown-menu > li > a {
     font-size: 16px;
   }
@@ -1077,6 +1077,13 @@ header {
     vertical-align: top;
   }
 }
+.workshop-card-wrapper {
+  float: none;
+  display: inline-block;
+  vertical-align: top;
+  margin-right: -4px;
+}
+
 .card {
   display: inline-block;
   vertical-align: top;
@@ -1089,6 +1096,11 @@ header {
   cursor: pointer;
   border: none;
   width: 100%;
+}
+
+.workshop-card-wrapper .card {
+  display: block;
+  max-width: 350px;
 }
 
 @media (min-width: 1200px) {

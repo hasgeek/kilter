@@ -2,14 +2,11 @@
   <div class="container">
     <div class="row">
       <h3 class="huge col-xs-12 text-center">Workshops</h3>
-    </div>
-    <div class="row">
-      <div class="col-xs-12">
       {% for item in getnode(path='workshops').data['talks'] %}
-        <div class="col-xs-4">
+        <div class="col-xs-12 col-sm-6 col-md-4 workshop-card-wrapper">
           <div class="card">
-            <a href="{{item.url}}" class="banner-wrapper" target="_blank" data-target="{{item.url}}" data-label="{{ item.title }}"><img src="{{ item.banner}}" class="banner"/></a>
-            <div class="pad-half push-one-bottom">
+            <a href="{{item.url}}" target="_blank" data-target="{{item.url}}" data-label="{{ item.title }}"><img src="{{ item.banner}}" class="banner"/></a>
+            <div class="push-one">
               <h3 class="space-one-top nospace-bottom regular text-center">{{ item.title }}</h3>
               <p class="space-half-top nospace-bottom text-center kilter-redorange">{{ item.speaker }}</p>
               <div class="space-half-top nospace-bottom regular pad-one">{{ item.description|safe }}</div>
@@ -18,7 +15,6 @@
           </div>
         </div>
       {%- endfor %}
-      </div>
     </div>  
-</div>
+  </div>
 </section>
