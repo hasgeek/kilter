@@ -9,20 +9,20 @@
     {%raw%}
     <script id="proposals-wrapper" type="text/ractive">
       <div class="proposals">
-      <div class="mCustomScrollbar" data-mcs-theme="dark">
-        {{#proposals}}
-          <div class="proposal-card click" data-toggle="modal" data-target="#{{id}}" data-label="Funnel proposal card">
-            <div class="talk">
-              <p class="title"><span>{{title}}</span></p>
-              <hr class="separator">
-              <div class="description secondary-prose">
-                {{{objective}}}
+        <div class="mCustomScrollbar js-proposal-wrapper" data-mcs-theme="dark">
+          {{#proposals}}
+            <div class="proposal-card click" data-toggle="modal" data-target="#{{id}}" data-label="Funnel proposal card">
+              <div class="talk">
+                <p class="title"><span>{{title}}</span></p>
+                <hr class="separator">
+                <div class="description secondary-prose">
+                  {{{objective}}}
+                </div>
+                <p class="fullname secondary"><span>{{fullname}}</span></p>
               </div>
-              <p class="fullname secondary"><span>{{fullname}}</span></p>
             </div>
-          </div>
-        {{/}}
-      </div>
+          {{/}}
+        </div>
       </div>
       {{#proposals}}
       <div class="modal fade" id="{{id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">

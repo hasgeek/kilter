@@ -49,6 +49,9 @@
       <div class="collapse navbar-collapse navbar-ex1-collapse">
         <ul class="nav navbar-nav">
           <li><a href="#annoucements" class="smooth-scroll">Overview</a></li>
+          {% if node.properties.featured_talks %}
+            <li><a href="#featured-talks" class="smooth-scroll">Featured talks</a></li>
+          {% endif %}
           {% if node.properties.schedule %}
             <li><a href="#schedule" class="smooth-scroll">Schedule</a></li>
           {% endif %}
@@ -88,6 +91,9 @@
 
 {% block content %}
   {% include theme("sections/introduction.html") %}
+  {% if node.properties.featured_talks %}
+    {% include theme("sections/featured-talks.html") %}
+  {% endif %}
   {% if node.properties.schedule %}
     {% include theme("sections/schedule.html") %}
   {% endif %}
@@ -269,6 +275,16 @@ $(document).ready(function() {
           Kilter.parseScheduleJson(data, 'conference', '#conferenceschedule');
         }
       });//eof ajax call
+    }
+
+    if($('#featured-talks').length) {
+      var talksLength = {{ getnode(path='featured-talks').data['talks']|length }};
+      //Set width of content div to enable horizontal scrolling
+      Kilter.enableScroll(".js-featured-talks", talksLength, ".featured-talks-list");
+
+      $(window).resize(function() {
+        Kilter.enableScroll(".js-featured-talks", talksLength, ".featured-talks-list");
+      });
     }
   };
 

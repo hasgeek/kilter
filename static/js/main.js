@@ -23,9 +23,9 @@ Kilter.getElemWidth = function(elem) {
   return card_total_width;
 };
 
-Kilter.enableScroll = function(items_length, elem) {
-  $(".mCustomScrollbar").css('width', items_length * Kilter.getElemWidth(elem) + 'px');
-  $('.mCustomScrollbar').mCustomScrollbar({ axis:"x", theme: "dark-3", scrollInertia: 10, alwaysShowScrollbar: 0});
+Kilter.enableScroll = function(wrapperElem, itemsLength, elem) {
+  $(wrapperElem).css('width', itemsLength * Kilter.getElemWidth(elem) + 'px');
+  $(wrapperElem).mCustomScrollbar({ axis:"x", theme: "dark-3", scrollInertia: 10, alwaysShowScrollbar: 0});
 };
 
 Kilter.parseJson = function (data, wrapper, div, type) {
@@ -63,10 +63,10 @@ Kilter.parseProposalJson = function(json) {
       });
 
       //Set width of content div to enable horizontal scrolling
-      Kilter.enableScroll(confirmedProposals.length, ".proposal-card");
+      Kilter.enableScroll(".js-proposal-wrapper", confirmedProposals.length, ".proposal-card");
 
       $(window).resize(function() {
-        Kilter.enableScroll(confirmedProposals.length, ".proposal-card");
+        Kilter.enableScroll(".js-proposal-wrapper", confirmedProposals.length, ".proposal-card");
       });
 
       $('#funnel-proposals .click, #funnel-proposals .btn').click(function(event) {
