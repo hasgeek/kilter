@@ -48,7 +48,16 @@
 
       <div class="collapse navbar-collapse navbar-ex1-collapse">
         <ul class="nav navbar-nav">
-          <li><a href="#annoucements" class="smooth-scroll">Announcements</a></li>
+          <li><a href="#annoucements" class="smooth-scroll">Overview</a></li>
+          {% if node.properties.schedule %}
+            <li><a href="#schedule" class="smooth-scroll">Schedule</a></li>
+          {% endif %}
+          {% if node.properties.tickets %}
+            <li><a href="#tickets" class="smooth-scroll">Tickets</a></li>
+          {% endif %}
+          {% if node.properties.workshops %}
+            <li><a href="#workshops" class="smooth-scroll">Workshops</a></li>
+          {% endif %}
           {% if node.properties.theme %}
             <li><a href="#discussions" class="smooth-scroll">Discussions</a></li>
           {% endif %}
@@ -57,15 +66,6 @@
           {% endif %}
           {% if node.properties.proposals %}
             <li><a href="#proposals" class="smooth-scroll">Confirmed talks</a></li>
-          {% endif %}
-          {% if node.properties.workshops %}
-            <li><a href="#workshops" class="smooth-scroll">Workshops</a></li>
-          {% endif %}
-          {% if node.properties.schedule %}
-            <li><a href="#schedule" class="smooth-scroll">Schedule</a></li>
-          {% endif %}
-          {% if node.properties.tickets %}
-            <li><a href="#tickets" class="smooth-scroll">Tickets</a></li>
           {% endif %}
           {% if node.properties.runup_events_list %}
             <li><a href="#runup-events" class="smooth-scroll">Runup events</a></li>
@@ -88,23 +88,23 @@
 
 {% block content %}
   {% include theme("sections/introduction.html") %}
+  {% if node.properties.schedule %}
+    {% include theme("sections/schedule.html") %}
+  {% endif %}
+  {% if node.properties.tickets %}
+    {% include theme("sections/tickets.html") %}
+  {% endif %}
   {% if node.properties.theme %}
     {% include theme("sections/theme.html") %}
+  {% endif %}
+  {% if node.properties.workshops %}
+    {% include theme("sections/workshops.html") %}
   {% endif %}
   {% if node.properties.blog %}
     {% include theme("sections/blog.html") %}
   {% endif %}
   {% if node.properties.proposals %}
     {% include theme("sections/proposals.html") %}
-  {% endif %}
-  {% if node.properties.workshops %}
-    {% include theme("sections/workshops.html") %}
-  {% endif %}
-  {% if node.properties.schedule %}
-    {% include theme("sections/schedule.html") %}
-  {% endif %}
-  {% if node.properties.tickets %}
-    {% include theme("sections/tickets.html") %}
   {% endif %}
   {% if node.properties.runup_events_list %}
     {% include theme("sections/runup-events-list.html") %}
