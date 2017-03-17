@@ -936,6 +936,7 @@ body.modal-open, .modal-open .navbar-fixed-top, .modal-open .navbar-fixed-bottom
 
 .schedule-table td.track-0 div {
   background-color: $kilterlightblue;
+  color: #fff
 }
 
 .schedule-table td.track-1 div {
@@ -966,33 +967,37 @@ body.modal-open, .modal-open .navbar-fixed-top, .modal-open .navbar-fixed-bottom
 
 .schedule-table tbody td .title,
 .schedule-table tbody td .expand-icon {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: bold;
   color: #000 !important;
   line-height: 1.3;
 }
 
 .schedule-table tbody td .speaker {
-  font-size: 14px;
+  font-size: 18px;
   color: #444;
 }
 
 .schedule-table tbody td .duration {
-  font-size: 12px;
+  font-size: 16px;
   font-style: italic;
   color: #666;
 }
 
 .schedule-table tbody td .venue {
-  font-size: 12px;
+  font-size: 16px;
   color: #666;
   padding-bottom: 10px;
 }
 
 .schedule-table tbody td .description-text {
   padding: 2px 5px;
-  font-size: 12px;
-  color: #666;
+  font-size: 14px;
+}
+
+.schedule-table tbody td .description-text ul, 
+.schedule-table tbody td .description-text ol {
+  padding: 2px 15px;
 }
 
 .schedule-table tbody td.tab-active {
@@ -1018,15 +1023,6 @@ body.modal-open, .modal-open .navbar-fixed-top, .modal-open .navbar-fixed-bottom
   display: block;
 }
 
-@media (max-width: 479px) {
-  .schedule-table tbody td h4 {
-    font-size: .8rem;
-  }
-
-  .schedule-table tbody td p {
-    font-size: .6rem;
-  }
-}
 @media only screen and (min-width: 768px) {
   .schedule-table thead th.time {
     width: 12%;
@@ -1071,25 +1067,10 @@ body.modal-open, .modal-open .navbar-fixed-top, .modal-open .navbar-fixed-bottom
     right: -7px;
   }
 
-  .schedule-table tbody td .title,
-  .schedule-table tbody td .expand-icon {
-    font-size: 18px;
-  }
-
-  .schedule-table tbody td .speaker {
-    font-size: 16px;
-  }
-
-  .schedule-table tbody td .duration {
-    font-size: 14px;
-  }
-
-  .schedule-table tbody td .venue {
-    font-size: 14px;
-  }
-
-  .schedule-table tbody td .description-text {
-    font-size: 14px;
+  .schedule-table tbody td.track-0 h4,
+  .schedule-table tbody td.track-1 h4,
+  .schedule-table tbody td.track-2 h4  {
+    padding-top: 25px;
   }
 }
 
