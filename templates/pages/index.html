@@ -103,6 +103,9 @@
   {% if node.properties.theme %}
     {% include theme("sections/theme.html") %}
   {% endif %}
+  {% if node.properties.featured_talks %}
+    {% include theme("sections/featured-talks.html") %}
+  {% endif %}
   {% if node.properties.workshops %}
     {% include theme("sections/workshops.html") %}
   {% endif %}
