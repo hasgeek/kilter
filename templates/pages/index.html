@@ -161,13 +161,23 @@
 </style> 
 
 <script>
-$(document).ready(function() {  
+$(document).ready(function() {
+  if($('#featured-talks').length) {
+    var talksLength = {{ getnode(path='featured-talks').data['talks']|length }};
+    //Set width of content div to enable horizontal scrolling
+    Kilter.enableScroll(".js-featured-talks", talksLength, ".featured-talks-list");
+
+    $(window).resize(function() {
+      Kilter.enableScroll(".js-featured-talks", talksLength, ".featured-talks-list");
+    });
+  }
+
   var boxofficeUrl = "https://boxoffice.hasgeek.com";
 
   $.get({
     url: boxofficeUrl + "/api/1/boxoffice.js",   
     crossDomain: true,
-    timeout: 8000,
+    timeout: 20000,
     retries: 5,
     retryInterval: 8000,
     success: function(data) {
@@ -275,16 +285,6 @@ $(document).ready(function() {
           Kilter.parseScheduleJson(data, 'conference', '#conferenceschedule');
         }
       });//eof ajax call
-    }
-
-    if($('#featured-talks').length) {
-      var talksLength = {{ getnode(path='featured-talks').data['talks']|length }};
-      //Set width of content div to enable horizontal scrolling
-      Kilter.enableScroll(".js-featured-talks", talksLength, ".featured-talks-list");
-
-      $(window).resize(function() {
-        Kilter.enableScroll(".js-featured-talks", talksLength, ".featured-talks-list");
-      });
     }
   };
 
