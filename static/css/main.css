@@ -1084,7 +1084,7 @@ header {
   margin-right: -4px;
 }
 
-.card {
+.workshop-card-wrapper .card {
   display: inline-block;
   vertical-align: top;
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.6);
@@ -1104,8 +1104,8 @@ header {
 }
 
 @media (min-width: 1200px) {
-  .card {
-    min-height: 675px;
+  .workshop-card-wrapper .card {
+    min-height: 670px;
     overflow: hidden;
   }
 }
