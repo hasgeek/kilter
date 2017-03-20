@@ -11,6 +11,8 @@
               <p class="space-half-top nospace-bottom text-center kilter-redorange">{{ item.speaker }}</p>
               <div class="space-half-top nospace-bottom regular pad-one">{{ item.description|safe }}</div>
               <p class="space-half-top nospace-bottom text-center secondary bold">{{ item.type }}</p>
+              {% if item.date %}<p class="space-half-top nospace-bottom text-center secondary"><i class="fa fa-calendar fa-fw"></i> {{ item.date }}</p>{% endif %}
+              {% if item.time %}<p class="space-half-top nospace-bottom text-center secondary"><i class="fa fa-clock-o fa-fw"></i> {{ item.time }}</p>{% endif %}
             </div>
           </div>
         </div>

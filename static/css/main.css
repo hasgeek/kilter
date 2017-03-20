@@ -1105,7 +1105,7 @@ header {
 
 @media (min-width: 1200px) {
   .card {
-    min-height: 350px;
+    min-height: 675px;
     overflow: hidden;
   }
 }
