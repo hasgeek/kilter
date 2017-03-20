@@ -1096,6 +1096,7 @@ header {
   cursor: pointer;
   border: none;
   width: 100%;
+  min-height: 320px;
 }
 
 .workshop-card-wrapper .card {
