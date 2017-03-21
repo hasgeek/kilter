@@ -812,6 +812,12 @@ header {
   background-color: #86d2db;
 }
 
+.header-image-mobile {
+  max-width: none;
+  height: 350px;
+  width: 33em;
+}
+
 .banner-text {
   color: #333;
   position: absolute;
