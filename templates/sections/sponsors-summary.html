@@ -1,9 +1,9 @@
-<section id="sponsors" class="sponsors push-four clearfix fill-darkblue">
+<section id="sponsors" class="sponsors push-three-top push-two-bottom clearfix fill-dark">
   <div class="row-fluid container">
-    <div class="col-xs-12 text-center push-one-bottom">
-      <h3 class="huge">Sponsors</h3>
+    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 push-one-bottom">
+      <h2 class="calm centered space-one large">Sponsors</h2>
     </div>
-     <div class="col-xs-12 regular text-center space-one-top">
+     <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12 secondary space-one-top">
       {% with f = fragment('2017', 'about-sponsorship') %}
         {{ f.content }}
       {% endwith %}
@@ -11,7 +11,7 @@
   </div>
   {% with %}
     {% set types = getnode(path='2017-sponsors-types').data['types'] %}
-    {% set items = getnode(path='2017-sponsors').data['items'] %}
+    {% set items = getnode(path='2017-sponsors').data['sponsors'] %}
     {% for type in types %}
       {% set outer = loop %}
       {% for item in items if item.type == type.id  %}
@@ -22,7 +22,7 @@
           <ul class="col-lg-7 col-md-7 col-sm-7 col-xs-12 nospace-bottom list-plain link-silent clearfix list-space-line sponsor-{{ type.size }} nospace-ul">
         {% endif %}
           <li>
-              <a href="{% if type.size == 's' %}{{ item.link }}{% else %}sponsors#{{ type.id }}-{{ item.id }}{% endif %}" {% if type.size == 's' %}target="_blank"{% endif %} class="occupy fill-white sponsorlogo {% if item.orientation == 'portrait' %}contain-height{% elif item.orientation == 'landscape' %}contain-width{% endif %}">
+              <a href="{% if type.size == 's' %}{{ item.link }}{% else %}sponsors#{{ type.id }}-{{ item.id }}{% endif %}" {% if type.size == 's' %}target="_blank"{% endif %} class="occupy sponsorlogo {% if item.orientation == 'portrait' %}contain-height{% elif item.orientation == 'landscape' %}contain-width{% endif %}">
                 <img alt="{{ item.title }}" src="{{ item.logo }}">
               </a>
           </li>
@@ -34,3 +34,4 @@
     {% endfor %}
   {% endwith %}
 </section>
+
