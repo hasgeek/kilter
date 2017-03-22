@@ -5,7 +5,7 @@
 </section>
 
 {% with fill_cycler = cycler('fill-white', 'fill-kilterblue') %}
-  {% set types = getnode(path='2017-sponsors-type').data['types'] %}
+  {% set types = getnode(path='2017-sponsors-types').data['types'] %}
   {% set items = getnode(path='2017-sponsors').data['sponsors'] %}
   {% for type in types %}
     {% set outer = loop %}
