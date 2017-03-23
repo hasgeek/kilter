@@ -1996,7 +1996,7 @@ body.modal-open, .modal-open .navbar-fixed-top, .modal-open .navbar-fixed-bottom
 /*Featured speakers*/
 .featured-talks {
   width: 100%;
-  height: 380px;
+  height: 395px;
   overflow: auto;
   outline: none;
   padding-left: 15px;
@@ -2011,22 +2011,11 @@ body.modal-open, .modal-open .navbar-fixed-top, .modal-open .navbar-fixed-bottom
   vertical-align: top;
   word-wrap: break-word;
   width: 255px;
-  height: 330px;
+  height: 350px;
   margin: 15px 15px 0 0;
   text-align: center;
 }
 
-@media (min-width: 768px) {
-  .featured-talks {
-    height: 440px;
-  }
-
-  .featured-talks-list {
-    width: 350px;
-    height: 370px;
-    margin: 15px 30px 0 0;
-  }
-}
 .speaker-image {
   width: 150px;
   height: 150px;
@@ -2036,12 +2025,35 @@ body.modal-open, .modal-open .navbar-fixed-top, .modal-open .navbar-fixed-bottom
 }
 
 @media (min-width: 480px) {
+  .featured-talks {
+    height: 440px;
+  }
+
   .featured-talks-list {
     width: 280px;
+    height: 400px;
   }
 
   .speaker-image {
     width: 200px;
     height: 200px;
+  }
+}
+@media (min-width: 768px) {
+  .featured-talks-list {
+    width: 350px;
+    height: 370px;
+    margin: 15px 30px 0 0;
+  }
+}
+@media (min-width: 1200px) {
+  .featured-talks {
+    height: 420px;
+  }
+
+  .featured-talks-list {
+    width: 350px;
+    height: 350px;
+    margin: 15px 30px 0 0;
   }
 }
