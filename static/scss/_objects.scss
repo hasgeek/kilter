@@ -1079,7 +1079,7 @@ body.modal-open, .modal-open .navbar-fixed-top, .modal-open .navbar-fixed-bottom
 .featured-talks
 {
   width: 100%;
-  height: 380px;
+  height: 400px;
   overflow: auto;
   outline: none;
   padding-left: 15px;
@@ -1093,10 +1093,19 @@ body.modal-open, .modal-open .navbar-fixed-top, .modal-open .navbar-fixed-bottom
   margin-bottom: 2.5rem !important;
   vertical-align: top;
   word-wrap: break-word;
-  width: 350px;
-  height: 310px;
+  width: 200px;
+  height: 360px;
   margin: 15px;
   text-align: center;
+}
+@media (min-width: 768px) {
+  .featured-talks {
+    height: 380px;
+  }
+  .featured-talks-list {
+    width: 350px;
+    height: 310px;
+  }
 }
 
 .speaker-image {

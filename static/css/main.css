@@ -812,12 +812,6 @@ header {
   background-color: #86d2db;
 }
 
-.header-image-mobile {
-  max-width: none;
-  height: 350px;
-  width: 33em;
-}
-
 .banner-text {
   color: #333;
   position: absolute;
@@ -1744,7 +1738,7 @@ body.modal-open, .modal-open .navbar-fixed-top, .modal-open .navbar-fixed-bottom
   border-radius: 4px;
   padding: 10px 5px;
   font-size: 10px;
-  color: #000;
+  color: #fff;
   background-color: #e15d36;
 }
 
@@ -2002,7 +1996,7 @@ body.modal-open, .modal-open .navbar-fixed-top, .modal-open .navbar-fixed-bottom
 /*Featured speakers*/
 .featured-talks {
   width: 100%;
-  height: 380px;
+  height: 400px;
   overflow: auto;
   outline: none;
   padding-left: 15px;
@@ -2016,12 +2010,22 @@ body.modal-open, .modal-open .navbar-fixed-top, .modal-open .navbar-fixed-bottom
   margin-bottom: 2.5rem !important;
   vertical-align: top;
   word-wrap: break-word;
-  width: 350px;
-  height: 310px;
+  width: 200px;
+  height: 360px;
   margin: 15px;
   text-align: center;
 }
 
+@media (min-width: 768px) {
+  .featured-talks {
+    height: 380px;
+  }
+
+  .featured-talks-list {
+    width: 350px;
+    height: 310px;
+  }
+}
 .speaker-image {
   width: 150px;
   height: 150px;

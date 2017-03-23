@@ -20,7 +20,7 @@
               {%if event.date %}<p class="space-half-top nospace-bottom secondary"><i class="fa fa-calendar"></i> {{ event.date }}</p>{% endif %}
               {%if event.time %}<p class="space-half-top nospace-bottom secondary"><i class="fa fa-clock-o"></i> {{ event.time }}</p>{% endif %}
               <p class="space-half-top nospace-bottom secondary"><i class="fa fa-map-marker"></i> {{ event.venue|safe }}</p>
-              {% if event.url %}<a href="{{event.url}}" class="button space-one" data-target="{{event.url}}" data-label="{{ event.title }}" target="_blank">Interested</a>{% endif %}
+              {% if event.url %}<a href="{{event.url}}" class="button btn-shadow space-one" data-target="{{event.url}}" data-label="{{ event.title }}" target="_blank">Interested</a>{% endif %}
             </div>
           </div>
         {% endfor %}
