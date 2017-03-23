@@ -17,7 +17,7 @@
       {% for item in items if item.type == type.id  %}
         {% if loop.first %}
         <div id="sponsors-{{ type.id }}" class="row-fluid container space-two-top">
-          <h3 class="col-lg-5 col-md-5 col-sm-5 col-xs-12 legible all-caps space-one-bottom">{{ type.title }}</h3>
+          <h3 class="col-lg-5 col-md-5 col-sm-5 col-xs-12 legible space-one-bottom">{{ type.title }}</h3>
 
           <ul class="col-lg-7 col-md-7 col-sm-7 col-xs-12 nospace-bottom list-plain link-silent clearfix list-space-line sponsor-{{ type.size }} nospace-ul">
         {% endif %}

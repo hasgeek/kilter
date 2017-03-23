@@ -24,6 +24,7 @@ Kilter.getElemWidth = function(elem) {
 };
 
 Kilter.enableScroll = function(wrapperElem, itemsLength, elem) {
+  console.log("enableScroll", wrapperElem);
   $(wrapperElem).css('width', itemsLength * Kilter.getElemWidth(elem) + 'px');
   $(wrapperElem).mCustomScrollbar({ axis:"x", theme: "dark-3", scrollInertia: 10, alwaysShowScrollbar: 0});
 };

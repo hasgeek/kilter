@@ -3,14 +3,14 @@
 
 <section id="{{ session.id }}" class="push-two clearfix">
   <div class="container-fluid">
-    {% if session.label %}<h2 class="text-center push-1q-bottom large all-caps">{{ session.label }}</h2>{% endif %}
+    {% if session.label %}<h2 class="text-center push-1q-bottom large">{{ session.label }}</h2>{% endif %}
     {% for item in session|sort(attribute='count') %}
       <div id="{{ item.id }}" class="row push-two-bottom pad-3q session">
         <div class="row">
           <h3 class="legible nospace-top medium push-one-top pad-half darkblue bold text-center">{{ item.title|safe }}</h3>
           <div class="col-md-4 col-xs-12 speaker-bio">
             {% if item.photos %}<div class="clearfix nospace-top push-one-top space-half-bottom">{% for photo in item.photos %}<img src="{{photo}}" alt="" class="center-block speaker-photo {% if item.photos|length > 1 %} speaker-photo-small {% endif %}">{% endfor %}</div>{% endif %}
-            <h4 class="regular prose-type calm all-caps space-1q-top nospace-bottom darkblue bold text-center">{{ item.speaker|safe }}</h4>
+            <h4 class="regular prose-type calm space-1q-top nospace-bottom darkblue bold text-center">{{ item.speaker|safe }}</h4>
             {% if item.twitter %}<div class="link-silent regular-prose space-1q-top nospace-bottom text-center"><a href="https://twitter.com/{{ item.twitter }}" target="_blank">@{{ item.twitter }}</a></div>{% endif %}
             {% if item.designation %}<p class="secondary italic space-1q-top nospace-bottom darkyellow text-center">{{ item.designation|safe }}</p>{% endif %}
             {% if item.bio %}<div class="secondary space-1q-top nospace-bottom text-center">{{ item.bio|safe }}</div>{% endif %}
