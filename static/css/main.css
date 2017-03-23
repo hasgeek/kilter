@@ -1849,6 +1849,10 @@ body.modal-open, .modal-open .navbar-fixed-top, .modal-open .navbar-fixed-bottom
   height: 100% !important;
 }
 
+.schedule-table tbody td.track-empty .schedule-talk {
+  border-radius: none;
+}
+
 .schedule-table tbody td.break div {
   background-color: #f58a73;
   padding: 15px 0;
