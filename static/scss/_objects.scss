@@ -819,7 +819,7 @@ body.modal-open, .modal-open .navbar-fixed-top, .modal-open .navbar-fixed-bottom
   border-radius: 4px;
   padding: 10px 5px;
   font-size: 10px;
-  color: #fff;
+  color: #333;
   background-color: $kilterorangered;
 }
 
@@ -839,7 +839,6 @@ body.modal-open, .modal-open .navbar-fixed-top, .modal-open .navbar-fixed-bottom
   }
 }
 .schedule-table th.tab-active {
-  color: #FFF;
   background-color: transparent;
 }
 
@@ -941,17 +940,14 @@ body.modal-open, .modal-open .navbar-fixed-top, .modal-open .navbar-fixed-bottom
 
 .schedule-table td.track-0 div {
   background-color: $kilterlightblue;
-  color: #fff
 }
 
 .schedule-table td.track-1 div {
   background-color: $kilterorange;
-  color: #fff;
 }
 
 .schedule-table td.track-2 div {
   background-color: $kiltergreen;
-  color: #fff;
 }
 
 .schedule-table tbody td h4 {
